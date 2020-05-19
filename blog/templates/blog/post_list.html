@@ -9,16 +9,12 @@
     		<h1><a href="/">Wenyue's Blog</a></h1>
     	</div>
 
-    	<div>
-    		<p>published: 18.05.2020, 7:46</p>
-    		<h2><a href="">My first post</a></h2>
-    		<p>Midway upon the journey, I found myself lost in a forest dark.</p>
-    	</div>
-
-    	<div>
-    		<p>published: 18.05.2020, 7:48</p>
-    		<h2><a href="">My second post</a></h2>
-    		<p>For the starightforward pathway had been lost.Ah me!How hard a thing it is to say.</p>
-    	</div>
+    	{% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
