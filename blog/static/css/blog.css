@@ -5,14 +5,40 @@
     padding: 20px 20px 20px 40px;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+.header-icon h1, .header-icon h1 a, .header-icon h1 a:visited, .header-icon h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
 }
 
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.header-icon {
+    display: flex;
+}
+
 .content {
     margin-left: 40px;
+}
+
+.content-container {
+    display: flex;
+}
+
+.row {
+    width: 85%;
+    margin-left: 50px;
+}
+
+.row-2 {
+    width: 15%;
 }
 
 h1, h2, h3, h4 {
@@ -20,6 +46,7 @@ h1, h2, h3, h4 {
 }
 
 .date {
+    float: right;
     color: #828282;
 }
 
@@ -31,17 +58,47 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
-
 .post {
-    margin-bottom: 70px;
+    margin-left: 50px;
+    margin-bottom: 60px;
+    margin-right: 20px;
 }
 
 .post h2 a, .post h2 a:visited {
     color: #000000;
 }
+
+.nav li, .nav a {
+    margin-bottom: 0;
+    display: inline-block;
+    * display:inline;
+    float: right;
+    zoom:1
+}
+
+.nav__item {
+    display: table-cell;
+    margin-right: 10px;
+    padding-left:.2em
+}
+
+.nav__link {
+    font-size: 12pt;
+}
+
+.copyright {
+    display: block;
+    margin-top: .5em;
+    color: #4C4C4C;
+    text-align: center;
+    clear:both
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    z-index: 10;
+    text-align: center;
+}
+
