@@ -1,14 +1,27 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
+    <div class="contact-detail">
+    	Find me on:  <a href="https://github.com/jwyhhh123"><i class="fab fa-github"></i></a> and <a href="mailto:jwyhhh123@hotmail.com"><i class="fa fa-envelope"></i></a>
+    </div>
+	<div class="posts-container">
+		<div class="col-1">
+		    {% for post in posts %}
+		        <div class="post">
+		            <div class="date">
+		                {{ post.published_date }}
+		            </div>
+		            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+		            <p>{{ post.text|linebreaksbr }}</p>
+		        </div>
+		    {% endfor %}
+		</div>
+	    <div class="col-2">
+            <div class="buttons">
+    			<a href="/"><button>My CV</button></a>
+    			<a href="/"><button>Button2</button></a>
+  			</div>
         </div>
-    {% endfor %}
+	</div>
 {% endblock %}
                 
