@@ -1,0 +1,78 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>Curricula Vitae</h2>
+    <h3>Profile</h3>
+    <ul>
+		<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;I am currently an undergraduate student (2018-2021) studying Artificial Intelligence in the University of Birmingham. I have developed excellent programming skills and analytical skills during the time. For now, Java is my most familiar language and I have been also learning Haskell, C/C++ and Python in my second year study. I have great interests in Machine Learning, Human-Computer Interaction, Computer Vision. This means that my study will be in the direction of Artificial Intelligence. 
+		Outside the uni life, I am willing to meet more people who are better than me. Sometimes it is like climbing a mountain, from 0 to 100 meters high, then go from 100 to 1000… and the landscapes are unique. I am keen to view somewhere far enough and wide enough.
+		</p>
+	</ul>
+	<h3>Education</h3>
+	<ul>
+		<div class="edu">
+			<strong>Kaplan Foundation Education | University of Liverpool</strong>
+			<br>
+			Overall 82%
+			<br>
+			    - Physical Science (79/100)<br>
+			    - Algorithms, Programming and Data Representation (91/100)<br>
+			    - Mathematics of Science and Engineering (91/100)<br>
+			    - Skills of Study (69/100)<br>
+			    - Language for Study 3 (Exempt - Accredited Prior Learning)<br>
+		</div>
+		<div class="edu">
+			<strong>Artificial Intelligence and Computer Science BSc | University of Birmingham</strong>
+			<br>
+			1st Year : weighted average 71%
+			<br>
+			    - Java Fondamentals (76%)<br>
+			    - Foundation of Mathematics (58%)<br>
+			    - Data Structure (73%)<br>
+			    - Logic and Computation (74%)<br>
+			    - Artificial Intelligence (69%) (completed 2 team projects based on EV3 robot) 
+			<br>
+			2nd Year - PRESENT : N/A
+			<br>
+			- Advanced Functional Programming<br>
+			- Software Engineering (UML; designed a software of handling sleep disorder in a team with 6 people)<br>
+			- Systems Programming in C/ C++<br>
+		</div>
+	</ul>
+
+ 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show()" value="More" />
+ 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experiences</span>
+
+ 	<div class="edu-detail" style="display: none">
+		<form method="POST">
+	    	<input name="item_text" id="id_new_item" placeholder="More" />
+		</form>
+
+		<textarea cols="70" name="description" rows="5" maxlength="3000" class="ipt-text txtMaxlength" style="height: auto;width:600px;"></textarea>
+		<br>
+		<input type="button" class="btn-edu" id="btn-edu-delete" onclick="hide()" value="Delete" />
+	</div>
+
+	<h3>Internship</h3>
+	<ul>
+		<div>
+		<span><strong>Start date: </strong></span> 12/01/2018<br>
+		<span><strong>End date: </strong></span> 12/16/2019<br>
+		I fortunately joined CSSA Birmingham which is Chinese academic organization. I engaged in organizing several events and festival parties with other members. During the time, I learnt more about cooperation technique and organizing skills. (1 year)
+		<!-- plus button to add more -->
+		</div>
+	</ul>
+
+	<script>
+		function show(){
+		var show_part = document.querySelector('.edu-detail');
+		show_part.style.display = '';
+		}
+		function hide(){
+	    var show_part = document.querySelector('.edu-detail');
+	    show_part.style.display = 'none';
+	    }
+	</script>
+{% endblock %}
+

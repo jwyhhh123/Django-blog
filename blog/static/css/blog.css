@@ -42,12 +42,12 @@
 }
 
 .col-1 {
-    width: 85%;
+    width: 90%;
 }
 
 .col-2 {
     margin-top: 20px;
-    width: 15%;
+    width: 10%;
     margin-left: 10px;
 }
 
@@ -77,6 +77,10 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
+.nav {
+    margin-right: 45px;
+}
+
 .nav li, .nav a {
     margin-bottom: 0;
     display: inline-block;
@@ -91,7 +95,7 @@ h1, h2, h3, h4 {
     padding-left:.2em
 }
 
-.nav__link {
+.nav__link1 .nav__link2 .nav__link3 {
     font-size: 12pt;
 }
 
@@ -127,6 +131,35 @@ h1, h2, h3, h4 {
     width: 80px;
     display: inline-block;
     margin-left: 2px;
+}
+
+.btn-edu {
+    display: inline-block;
+    width: 100px;
+    height: 28px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border: none !important;
+    font-size: 12px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#btn-edu-add {
+    margin-left: 40px;
+}
+
+.btn-edu:hover {
+    background-color: #0071C2;      
+    color: white;
+}
+
+.edu {
+    margin-bottom: 10px;
+}
+
+.edu-detail {
+    margin-left: 40px;
 }
 
 .copyright {
