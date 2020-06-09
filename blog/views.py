@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+from .models import Item
 from django.shortcuts import redirect
 
 # Create your views here.
@@ -49,4 +50,10 @@ def about(request):
     return render(request, 'blog/about.html', {})
 
 def cv(request):
-    return render(request, 'blog/cv.html', {})
+    if request.method == 'POST':
+        Item.objects.create(title=request.POST['item_title'], text=request.POST['item_text'])
+        return redirect('/mycv')
+
+    items = Item.objects.all()
+    return render(request, 'blog/cv.html', {'items': items})
+

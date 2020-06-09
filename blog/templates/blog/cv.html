@@ -39,20 +39,35 @@
 			- Software Engineering (UML; designed a software of handling sleep disorder in a team with 6 people)<br>
 			- Systems Programming in C/ C++<br>
 		</div>
+
+		<div>
+            {% for item in items %}
+            	<div class="edu">
+	            	<strong>{{item.title}}</strong>
+	            	<br>
+	                {{ item.text|linebreaksbr }}
+	                <br>
+                </div>
+            {% endfor %}
+        </div>
+
+		{% if user.is_authenticated %}
+			<div class="more-and-text">
+			 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show()" value="More" />
+			 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experiences</span>
+		 	</div>
+		 	<div class="edu-detail" style="display: none">
+				<form method="POST">{% csrf_token %}
+			    	<input name="item_title" id="id_new_item" placeholder="More" />
+			    	<br>
+					<textarea cols="70" name="item_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
+					<br>
+					<button type="submit" class="btn-edu">Save</button>
+					<input type="button" class="btn-edu" id="btn-edu-delete" onclick="hide()" value="Delete" />
+				</form>
+			</div>
+		{% endif %}
 	</ul>
-
- 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show()" value="More" />
- 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experiences</span>
-
- 	<div class="edu-detail" style="display: none">
-		<form method="POST">
-	    	<input name="item_text" id="id_new_item" placeholder="More" />
-		</form>
-
-		<textarea cols="70" name="description" rows="5" maxlength="3000" class="ipt-text txtMaxlength" style="height: auto;width:600px;"></textarea>
-		<br>
-		<input type="button" class="btn-edu" id="btn-edu-delete" onclick="hide()" value="Delete" />
-	</div>
 
 	<h3>Internship</h3>
 	<ul>
@@ -66,12 +81,12 @@
 
 	<script>
 		function show(){
-		var show_part = document.querySelector('.edu-detail');
-		show_part.style.display = '';
+			var show_part = document.querySelector('.edu-detail');
+			show_part.style.display = '';
 		}
 		function hide(){
-	    var show_part = document.querySelector('.edu-detail');
-	    show_part.style.display = 'none';
+		    var show_part = document.querySelector('.edu-detail');
+		    show_part.style.display = 'none';
 	    }
 	</script>
 {% endblock %}

@@ -32,6 +32,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.find_element_by_class_name('menu-icon').click()
         sleep(1)
         
+        
 
 if __name__ == '__main__':  
     unittest.main()  

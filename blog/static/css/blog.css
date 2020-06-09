@@ -137,7 +137,6 @@ h1, h2, h3, h4 {
     display: inline-block;
     width: 100px;
     height: 28px;
-    margin-bottom: 15px;
     cursor: pointer;
     border: none !important;
     font-size: 12px;
@@ -145,13 +144,14 @@ h1, h2, h3, h4 {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#btn-edu-add {
-    margin-left: 40px;
-}
-
 .btn-edu:hover {
     background-color: #0071C2;      
     color: white;
+}
+
+.more-and-text {
+    margin-top: 15px;
+    margin-bottom: 19px;
 }
 
 .edu {
@@ -159,7 +159,11 @@ h1, h2, h3, h4 {
 }
 
 .edu-detail {
-    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.text-field {
+    margin-top: 10px;
 }
 
 .copyright {
