@@ -53,17 +53,17 @@
 
 		{% if user.is_authenticated %}
 			<div class="more-and-text">
-			 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show()" value="More" />
+			 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_edu()" value="More" />
 			 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experiences</span>
 		 	</div>
 		 	<div class="edu-detail" style="display: none">
-				<form method="POST">{% csrf_token %}
+				<form method="POST" name="post-edu">{% csrf_token %}
 			    	<input name="item_title" id="id_new_item" placeholder="More" />
 			    	<br>
 					<textarea cols="70" name="item_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
 					<br>
 					<button type="submit" class="btn-edu">Save</button>
-					<input type="button" class="btn-edu" id="btn-edu-delete" onclick="hide()" value="Delete" />
+					<input type="reset" class="btn-edu" id="btn-edu-delete" onclick="hide_edu()" value="Delete" />
 				</form>
 			</div>
 		{% endif %}
@@ -71,23 +71,82 @@
 
 	<h3>Internship</h3>
 	<ul>
-		<div>
+		<div class="intern">
 		<span><strong>Start date: </strong></span> 12/01/2018<br>
 		<span><strong>End date: </strong></span> 12/16/2019<br>
 		I fortunately joined CSSA Birmingham which is Chinese academic organization. I engaged in organizing several events and festival parties with other members. During the time, I learnt more about cooperation technique and organizing skills. (1 year)
-		<!-- plus button to add more -->
 		</div>
+		<div>
+			{% for intern in interns %}
+			<div class="intern">
+				<span><strong>Start date: </strong></span> {{ intern.start_date }}<br>
+				<span><strong>End date: </strong></span> {{ intern.end_date }}<br>
+				{{ intern.text|linebreaksbr }}
+				<br>
+			</div>
+			{% endfor %}
+		</div>
+
+		{% if user.is_authenticated %}
+			<div class="more-and-text">
+			 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_intern()" value="More" />
+			 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Internship Experiences</span>
+		 	</div>
+		 	<div class="intern-detail" style="display: none">
+				<form method="POST" name="post-intern">{% csrf_token %}
+			    	<input name="start_date" id="sd" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|[12]\d|3[0-1])[\-/]([0[1-9]|1[0-2])" required/><span style="margin-left: 5px; margin-right: 5px;">to</span><input name="end_date" id="ed" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|[12]\d|3[0-1])[\-/]([0[1-9]|1[0-2])" required/>
+			    	<br>
+					<textarea cols="70" name="intern_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
+					<br>
+					<button type="submit" class="btn-edu" onclick="validate_intern()">Save</button>
+					<input type="reset" class="btn-edu" id="btn-edu-delete" onclick="hide_intern()" value="Delete" />
+				</form>
+			</div>
+		{% endif %}
 	</ul>
 
 	<script>
-		function show(){
+		function show_edu(){
 			var show_part = document.querySelector('.edu-detail');
 			show_part.style.display = '';
 		}
-		function hide(){
+
+		function hide_edu(){
 		    var show_part = document.querySelector('.edu-detail');
 		    show_part.style.display = 'none';
 	    }
+
+	    function show_intern(){
+			var show_part = document.querySelector('.intern-detail');
+			show_part.style.display = '';
+		}
+
+		function hide_intern(){
+		    var show_part = document.querySelector('.intern-detail');
+		    show_part.style.display = 'none';
+	    }
+
+	    function validate_intern(){
+             var sd = document.getElementById("sd");
+             var ed = document.getElementById("ed");
+             var svd = sd.validity;
+             var evd = ed.validity;
+             
+             if (svd.valueMissing) {
+                 sd.setCustomValidity("Start date cannot be empty");
+             }else if (evd.valueMissing) {
+				 ed.setCustomValidity("End date cannot be empty");
+             }else{
+                 if (svd.patternMismatch) {
+                     sd.setCustomValidity("invalid format, should be yyyy-mm-dd");
+                 }else if (evd.patternMismatch) {
+                 	 ed.setCustomValidity("invalid format, should be yyyy-mm-dd");
+                 }else{
+                     sd.setCustomValidity("");
+                     ed.setCustomValidity("");
+                 }
+             }
+         }
 	</script>
 {% endblock %}
 

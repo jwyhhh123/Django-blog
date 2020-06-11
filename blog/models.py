@@ -20,3 +20,8 @@ class Post(models.Model):
 class Item(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField(default='')
+
+class Intern(models.Model):
+    start_date = models.DateField(default='')
+    end_date = models.DateField(default='')
+    text = models.TextField(default='')
