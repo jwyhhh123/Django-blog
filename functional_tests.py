@@ -15,6 +15,9 @@ class NewVisitorTest(unittest.TestCase):
         # to check out its homepage
         self.browser.get('http://localhost:8000')
 
+        # Retrieve current url
+        URL = self.browser.current_url
+
         # Check the page title and header mention Wenyue lists
         self.assertIn('Wenyue', self.browser.title)  
         header_text = self.browser.find_element_by_tag_name('h1').text  
@@ -31,6 +34,10 @@ class NewVisitorTest(unittest.TestCase):
         # Clicking the header icon can go back to its homepage
         self.browser.find_element_by_class_name('menu-icon').click()
         sleep(1)
+
+        # Should be back homepage
+        self.assertEquals(URL, 'http://localhost:8000/')
+
         
         
 
