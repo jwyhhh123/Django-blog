@@ -1,21 +1,23 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="post">
-        {% if post.published_date %}
-        	<div class="date">
-        		{{ post.published_date }}
-        	</div>
-        {% endif %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-        {% if user.is_authenticated %}
-            <div class="edit-region">
-                <div class="buttons-edit">
-                    <a href="{% url 'post_edit' pk=post.pk %}"><button class="btn btn-block btn-info"><i class="fa fa-pen"></i> Edit</button></a>
-                    <a href="{% url 'post_remove' pk=post.pk %}"><button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button></a>
+    <div class="posts-container">
+        <div class="col-1">
+            {% if post.published_date %}
+            	<div class="date">
+            		{{ post.published_date }}
+            	</div>
+            {% endif %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        <div class="col-2">
+            {% if user.is_authenticated %}
+                <div class="buttons">
+                    <a href="{% url 'post_edit' pk=post.pk %}"><button>Edit</button></a>
+                    <a href="{% url 'post_remove' pk=post.pk %}"><button>Delete</button></a>
                 </div>
-            </div>
-        {% endif %}
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

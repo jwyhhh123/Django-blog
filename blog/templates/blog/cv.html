@@ -43,9 +43,9 @@
 		<div>
             {% for item in items %}
             	<div class="edu">
-	            	<strong>{{item.title}}</strong>
+	            	<div class="cv-titles"><strong>{{item.title}}</strong></div>
 	            	<br>
-	                {{ item.text|linebreaksbr }}
+	                <div class="cv-texts">{{ item.text|linebreaksbr }}</div>
 	                <br>
                 </div>
             {% endfor %}
@@ -79,9 +79,11 @@
 		<div>
 			{% for intern in interns %}
 			<div class="intern">
-				<span><strong>Start date: </strong></span> {{ intern.start_date }}<br>
-				<span><strong>End date: </strong></span> {{ intern.end_date }}<br>
-				{{ intern.text|linebreaksbr }}
+				<div class="cv-titles">
+					<span><strong>Start date: </strong></span> {{ intern.start_date }}<br>
+					<span><strong>End date: </strong></span> {{ intern.end_date }}<br>
+				</div>
+				<div class="cv-texts">{{ intern.text|linebreaksbr }}</div>
 				<br>
 			</div>
 			{% endfor %}

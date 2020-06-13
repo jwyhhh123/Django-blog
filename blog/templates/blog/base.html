@@ -6,28 +6,28 @@
         <title>Wenyue's blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'fontawesome-free-5.11.2-web/css/all.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
         <div class="page-header">
             <div class="header-icon">
-                <a href="/"><img src="{% static '/images/icon.png' %}" alt="icon" class="menu-icon"></a>
+                <a href="/"><img src="{% static '/images/logo.png' %}" alt="icon" class="menu-logo"></a>
                 <h1><a href="/">Wenyue's Blog</a></h1>
             </div>
             <nav class="navbox js-nav-menu" role="navigation">
                 <ul class="nav nav--primary nav--inline">
-                    <li class="nav__item">
-                        <a href="{% url 'about' %}" class="nav__link1">About</a>
-                    </li>
                     <li class="nav__item">
                         {% if user.is_authenticated %}
                             <a href="{% url 'post_new' %}" class="nav__link2">New post</a>
                         {% endif %}
                     </li>
                     <li class="nav__item">
-                        <a href="{% url 'about' %}" class="nav__link3">About2</a>
+                        <a href="{% url 'cv' %}" class="nav__link3">Résumé</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{% url 'about' %}" class="nav__link1">About</a>
                     </li>
                 </ul>
             </nav>

@@ -64,3 +64,11 @@ def cv(request):
     interns = Intern.objects.all()
     return render(request, 'blog/cv.html', {'items': items,'interns': interns})
 
+def comment(request):
+    if request.method == 'POST':
+        Comment.objects.create(name=request.POST['nickname'],text=request.POST['text'])
+
+    comments = Comment.objects.all()
+    return render(request, 'blog/comment.html', {'comments': comments})
+
+

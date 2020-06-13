@@ -1,23 +1,41 @@
+* {
+    font-family: 'Press Start 2P';
+}
+
+h1, h2, h3, h4 {
+    font-size: 18px;
+}
+
+body {
+    font-size: 10px;
+    font-stretch: condensed;
+}
+
+.body-wrap {
+    border-bottom: none !important;
+}
 
 .page-header {
-    background-color: #0071C2;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
+    border-bottom: 0 none;
 }
 
 .header-icon h1, .header-icon h1 a, .header-icon h1 a:visited, .header-icon h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
+    font-size: 30pt;
 }
 
-.menu-icon {
+.menu-logo {
     width: 50px;
     height: 50px;
     border-radius: 4px;
     margin-left: 20px;
-    margin-top: 18px;
-    margin-right: 10px;
+    margin-top: 12px;
+    margin-right: 15px;
+}
+
+.menu-logo:hover{
+  opacity:.7;
 }
 
 .header-icon {
@@ -38,7 +56,9 @@
 }
 
 .contact-detail {
+    margin-bottom: 8px;
     font-style: italic;
+    color: #828282;
 }
 
 .col-1 {
@@ -49,10 +69,6 @@
     margin-top: 20px;
     width: 10%;
     margin-left: 10px;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
 }
 
 .date {
@@ -78,7 +94,7 @@ h1, h2, h3, h4 {
 }
 
 .nav {
-    margin-right: 45px;
+    margin-right: 50px;
 }
 
 .nav li, .nav a {
@@ -96,7 +112,28 @@ h1, h2, h3, h4 {
 }
 
 .nav__link1 .nav__link2 .nav__link3 {
-    font-size: 12pt;
+    font-size: 15pt;
+}
+
+.about-container {
+    display: flex;
+}
+
+.about-content {
+    width: 99%;
+}
+
+.me-img {
+    width: 1%;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.me-img img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .buttons {
@@ -105,12 +142,13 @@ h1, h2, h3, h4 {
 
 .buttons button {
     width: 120px;
+    height: 30px;
     background: transparent; 
     border: 2px solid #0071C2;
     border-radius: 6px;
     text-align: center;
     display: inline-block;      
-    font-size: 16px;      
+    font-size: 10px;      
     margin: 4px 2px;
     transition-duration: 0.4s;      
     cursor: pointer;      
@@ -154,6 +192,14 @@ h1, h2, h3, h4 {
     margin-bottom: 19px;
 }
 
+.cv-titles {
+    font-size: 11px;
+}
+
+.cv-texts {
+    margin-left: 12px;
+}
+
 .edu {
     margin-bottom: 10px;
 }
@@ -168,6 +214,17 @@ h1, h2, h3, h4 {
 
 .text-field {
     margin-top: 10px;
+}
+
+.comment-area {
+    margin-bottom: 20px;
+}
+
+.cmt {
+    padding: 10px 10px 10px 10px;
+    border-style: solid; 
+    border-width: 2px;
+    border-radius: 5px;
 }
 
 .copyright {

@@ -25,3 +25,7 @@ class Intern(models.Model):
     start_date = models.DateField(default='')
     end_date = models.DateField(default='')
     text = models.TextField(default='')
+
+class Comment(models.Model):
+    name = models.CharField(max_length=50)
+    text = models.TextField(default='')
