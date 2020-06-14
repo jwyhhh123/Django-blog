@@ -29,6 +29,9 @@
                     <li class="nav__item">
                         <a href="{% url 'about' %}" class="nav__link1">About</a>
                     </li>
+                    <li class="nav__item">
+                        <a class="nav__link1" onclick="darken()"><span style="cursor: pointer;">Darken</span></a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -41,8 +44,27 @@
             </div>
         </div>
     </body>
+    <div class="dark-mode-button" onclick="darken()">
+        <i class = "fa fa-cog fa-2x"></i>
+    </div>
     <div class="divide-line"></div>
     <footer>
         <small class="copyright">Designed by &copy; 2020 Wenyue Jin</small>
     </footer>
+
+    <script>
+        function darken(){
+            var element1 = document.querySelector('body');
+
+            if(element1.style.backgroundColor == 'white'){
+                element1.style.backgroundColor = '0c090a';
+                element1.style.color = 'white';
+                document.querySelector('.posts-container').style.color = 'white';
+            }else{
+                element1.style.backgroundColor = 'white';
+                element1.style.color = 'black';
+                document.querySelector('.posts-container').style.color = 'black';
+            }
+        }
+    </script>
 </html>

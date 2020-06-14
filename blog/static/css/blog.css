@@ -9,6 +9,7 @@ h1, h2, h3, h4 {
 body {
     font-size: 10px;
     font-stretch: condensed;
+    background-color: white;
 }
 
 .body-wrap {
@@ -144,7 +145,7 @@ body {
     width: 120px;
     height: 30px;
     background: transparent; 
-    border: 2px solid #0071C2;
+    border: 2px solid #3d84c1;
     border-radius: 6px;
     text-align: center;
     display: inline-block;      
@@ -153,6 +154,7 @@ body {
     transition-duration: 0.4s;      
     cursor: pointer;      
     text-decoration: none;
+    color: #3d84c1;
 }
 
 .buttons button:hover {
@@ -227,6 +229,33 @@ body {
     border-radius: 5px;
 }
 
+.comment-edit {
+    display: flex;
+}
+
+.comment-col {
+    margin-right: 10px;
+}
+
+#visitor {
+    margin-bottom: 10px;
+}
+
+.comment-text {
+    margin-bottom: 10px;
+}
+
+.dark-mode-button {
+    color: 0071C2;
+    float: right;
+    margin-right: 60px;
+    cursor: pointer;
+}
+
+.dark-mode-button:hover {
+    color: #828282;
+}
+
 .copyright {
     display: block;
     margin-top: .5em;
@@ -238,8 +267,8 @@ body {
 .divide-line {
     background-color: #c0c0c0;
     height: 2px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
     margin-top: 35px;
 }
 
