@@ -8,8 +8,15 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="http://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'fontawesome-free-5.11.2-web/css/all.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" id="theme_css" href="{% static 'css/blog.css' %}">
     </head>
+    <script>
+	    var i = sessionStorage.getItem("someVarKey");
+	    var element1 = document.getElementById("theme_css");
+	    if(i == "dark"){
+	    	element1.href = '{% static 'css/darkmode.css' %}';
+	    }
+	</script>
     <body>
         <div class="page-header">
             <div class="header-icon">
@@ -54,16 +61,14 @@
 
     <script>
         function darken(){
-            var element1 = document.querySelector('body');
+            var element1 = document.getElementById("theme_css");
 
-            if(element1.style.backgroundColor == 'white'){
-                element1.style.backgroundColor = '0c090a';
-                element1.style.color = 'white';
-                document.querySelector('.posts-container').style.color = 'white';
+            if(sessionStorage.getItem("someVarKey") == "light" || sessionStorage.getItem("someVarKey") == null){
+                element1.href = '{% static 'css/darkmode.css' %}';
+                sessionStorage.setItem("someVarKey", "dark");
             }else{
-                element1.style.backgroundColor = 'white';
-                element1.style.color = 'black';
-                document.querySelector('.posts-container').style.color = 'black';
+                element1.href = '{% static 'css/blog.css' %}';
+    			sessionStorage.setItem("someVarKey", "light");
             }
         }
     </script>
