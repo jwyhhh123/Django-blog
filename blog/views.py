@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import *
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def post_list(request):
@@ -64,6 +65,7 @@ def cv(request):
     interns = Intern.objects.all()
     return render(request, 'blog/cv.html', {'items': items,'interns': interns})
 
+@csrf_exempt
 def comment(request):
     if request.method == 'POST':
         Comment.objects.create(name=request.POST['nickname'],text=request.POST['text'])

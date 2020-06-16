@@ -57,7 +57,8 @@
 			 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experiences</span>
 		 	</div>
 		 	<div class="edu-detail" style="display: none">
-				<form method="POST" name="post-edu">{% csrf_token %}
+				<form method="POST" name="post-edu">
+					{% csrf_token %}
 			    	<input name="item_title" id="id_new_item" placeholder="More" />
 			    	<br>
 					<textarea cols="70" name="item_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
@@ -95,7 +96,8 @@
 			 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Internship Experiences</span>
 		 	</div>
 		 	<div class="intern-detail" style="display: none">
-				<form method="POST" name="post-intern">{% csrf_token %}
+				<form method="POST" name="post-intern">
+					{% csrf_token %}
 			    	<input name="start_date" id="sd" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|[12]\d|3[0-1])[\-/]([0[1-9]|1[0-2])" required/><span style="margin-left: 5px; margin-right: 5px;">to</span><input name="end_date" id="ed" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|[12]\d|3[0-1])[\-/]([0[1-9]|1[0-2])" required/>
 			    	<br>
 					<textarea cols="70" name="intern_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>

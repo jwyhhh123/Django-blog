@@ -1,18 +1,16 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h2>Comments</h2>
+    <div class="cmt-header"><h2>Comments</h2></div>
     <div class="comment-area">
         {% for comment in comments %}
         	<div class="cmt">
-            	<div class="cmt-name"><strong>{{comment.name}}</strong></div>
-            	<br>
+            	<div class="cmt-name"><strong>{{comment.name}}:&nbsp;</strong></div>
                 <div class="cmt-text">{{ comment.text|linebreaksbr }}</div>
-                <br>
             </div>
         {% endfor %}
     </div>
-    <div>
+    <div style="margin-top: 50px;">
 		<form method="POST">
 			<div class="comment-edit">
 				<div class="comment-col">
