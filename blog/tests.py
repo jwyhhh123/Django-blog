@@ -121,4 +121,28 @@ class ModelTest(TestCase):
         self.assertEqual(s_start_date, '1999-02-01')
         self.assertEqual(s_end_date, '2000-02-01')
 
+class CommentTest(TestCase):
 
+	def test_displays_all_items_above(self):
+		Comment.objects.create(name='Mark Lee',text='No exam in the third year.')
+		Comment.objects.create(name='Bruce Lee',text='Adaaaaaaaa.')
+
+		response = self.client.get('/comment/')
+
+		self.assertIn('Mark Lee', response.content.decode())
+		self.assertIn('No exam ', response.content.decode())
+		self.assertIn('Bruce Lee', response.content.decode())
+		self.assertIn('aaaaa', response.content.decode())
+
+	def test_only_saves_items_when_necessary(self):
+		self.client.get('/comment/')
+		self.assertEqual(Item.objects.count(), 0)
+
+	def test_can_save_a_POST_request(self):
+		response = self.client.post('/comment/', data={'nickname': 'Mark Lee','text': 'No exam in the third year.'})
+
+		self.assertEqual(Comment.objects.count(), 1)
+		fst = Comment.objects.first()
+		self.assertEqual(fst.name, 'Mark Lee')
+		self.assertEqual(fst.text, 'No exam in the third year.')
+		self.assertEqual(response.status_code, 200)

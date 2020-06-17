@@ -1,3 +1,5 @@
+/* base */
+
 * {
     font-family: 'Press Start 2P';
 }
@@ -44,18 +46,42 @@ body {
     display: flex;
 }
 
-.content {
-    margin-left: 40px;
+.nav {
+    margin-right: 50px;
 }
 
-.posts-container {
-    display: flex;
-    color: white;
+.nav li, .nav a {
+    margin-bottom: 0;
+    display: inline-block;
+    * display:inline;
+    float: right;
+    zoom:1
+}
+
+.nav__item {
+    display: table-cell;
+    margin-right: 10px;
+    padding-left:.2em
+}
+
+.nav__link1 .nav__link2 .nav__link3 {
+    font-size: 15pt;
 }
 
 .row {
     width: 100%;
     margin-left: 50px;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+/* post_list page css */
+
+.posts-container {
+    display: flex;
+    color: white;
 }
 
 .contact-detail {
@@ -100,27 +126,34 @@ body {
     color: #000000;
 }
 
-.nav {
-    margin-right: 50px;
+/* post_edit page css */
+
+.buttons {
+    margin-left: 200px;
 }
 
-.nav li, .nav a {
-    margin-bottom: 0;
+.buttons button {
+    width: 120px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid #3d84c1;
+    border-radius: 6px;
+    text-align: center;
     display: inline-block;
-    * display:inline;
-    float: right;
-    zoom:1
+    font-size: 10px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    color: #3d84c1;
 }
 
-.nav__item {
-    display: table-cell;
-    margin-right: 10px;
-    padding-left:.2em
+.buttons button:hover {
+    background-color: #0071C2;
+    color: white;
 }
 
-.nav__link1 .nav__link2 .nav__link3 {
-    font-size: 15pt;
-}
+/* about page css */
 
 .about-container {
     display: flex;
@@ -143,40 +176,10 @@ body {
     overflow: hidden;
 }
 
-.buttons {
-    margin-left: 200px;
-}
+/* cv page css */
 
-.buttons button {
-    width: 120px;
-    height: 30px;
-    background: transparent; 
-    border: 2px solid #3d84c1;
-    border-radius: 6px;
-    text-align: center;
-    display: inline-block;      
-    font-size: 10px;      
-    margin: 4px 2px;
-    transition-duration: 0.4s;      
-    cursor: pointer;      
-    text-decoration: none;
-    color: #3d84c1;
-}
-
-.buttons button:hover {
-    background-color: #0071C2;      
-    color: white;
-}
-
-.edit-region {
-    margin-top: 20px;
-    float: right;
-}
-
-.buttons-edit button {
-    width: 80px;
-    display: inline-block;
-    margin-left: 2px;
+.edu {
+    margin-bottom: 10px;
 }
 
 .btn-edu {
@@ -192,7 +195,7 @@ body {
 }
 
 .btn-edu:hover {
-    background-color: #0071C2;      
+    background-color: #0071C2;
     color: white;
 }
 
@@ -209,16 +212,17 @@ body {
     margin-left: 12px;
 }
 
-.edu {
-    margin-bottom: 10px;
-}
-
 .intern {
     margin-bottom: 10px;
 }
 
 .edu-detail {
     margin-top: 10px;
+}
+
+.text-field {
+    margin-top: 10px;
+    color: black;
 }
 
 #id_new_item {
@@ -233,17 +237,15 @@ body {
     color: black;
 }
 
-.text-field {
-    margin-top: 10px;
-    color: black;
+/* comment page css */
+
+.cmt-header {
+    margin-bottom: 20px;
 }
 
 .comment-area {
     margin-bottom: 20px;
-}
-
-.cmt-header {
-    margin-bottom: 20px;
+    margin-right: 60px;
 }
 
 .cmt {
@@ -255,7 +257,7 @@ body {
 }
 
 .cmt-text {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .comment-edit {
@@ -276,6 +278,13 @@ body {
     color: black;
 }
 
+.comment-submit {
+    float: right;
+    margin-right: 107px;
+}
+
+/* dark mode setting icon */
+
 .dark-mode-button {
     color: 0071C2;
     float: right;
@@ -287,13 +296,7 @@ body {
     color: #828282;
 }
 
-.copyright {
-    display: block;
-    margin-top: .5em;
-    color: #828282;
-    text-align: center;
-    clear:both
-}
+/* footer */
 
 .divide-line {
     background-color: #c0c0c0;
@@ -310,4 +313,18 @@ body {
     z-index: 10;
     text-align: center;
 }
+
+.footer-area {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    display: block;
+    margin-top: .5em;
+    color: #828282;
+    text-align: center;
+    clear:both
+}
+
 

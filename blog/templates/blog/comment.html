@@ -5,7 +5,7 @@
     <div class="comment-area">
         {% for comment in comments %}
         	<div class="cmt">
-            	<div class="cmt-name"><strong>{{comment.name}}:&nbsp;</strong></div>
+            	<div><strong>{{comment.name}}:&nbsp;</strong></div>
                 <div class="cmt-text">{{ comment.text|linebreaksbr }}</div>
             </div>
         {% endfor %}
@@ -20,7 +20,7 @@
 		    	<div class="comment-col">
 					<input name="nickname" id="visitor" placeholder="" />
 					<textarea cols="70" name="text" rows="5" maxlength="3000" class="comment-text" style="height: auto;width:600px;"></textarea>
-	            	<div style="float: right;margin-right: 95px;"><button type="submit" class="btn-edu">Submit</button></div>
+	            	<div class="comment-submit"><button type="submit" class="btn-edu">Submit</button></div>
 	            </div>
             </div>
 		</form>
