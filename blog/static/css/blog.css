@@ -163,14 +163,38 @@ body {
     margin-top: 45px;
 }
 
-.me-img img{
+.me-img img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
+    transition: 0.8s;
+}
+
+.me-img img:hover {
+    transform: scale(1.2);
+}
+
+.me-text {
+    margin-left: 21px;
+    font-style: italic;
 }
 
 /* cv page css */
+
+.cv {
+    display: flex;
+}
+
+.cv-col1 {
+    width: 90%;
+}
+
+.cv-col2 {
+    width: 10%;
+    margin-top: 50px;
+    margin-left: 10px;
+}
 
 .edu {
     margin-bottom: 10px;

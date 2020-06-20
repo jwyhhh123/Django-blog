@@ -1,113 +1,136 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h2>Curricula Vitae</h2>
-    <h3>Profile</h3>
-    <ul>
-		<p>
-		&nbsp;&nbsp;&nbsp;&nbsp;I am currently an undergraduate student (2018-2021) studying Artificial Intelligence in the University of Birmingham. I have developed excellent programming skills and analytical skills during the time. For now, Java is my most familiar language and I have been also learning Haskell, C/C++ and Python in my second year study. I have great interests in Machine Learning, Human-Computer Interaction, Computer Vision. This means that my study will be in the direction of Artificial Intelligence. 
-		Outside the uni life, I am willing to meet more people who are better than me. Sometimes it is like climbing a mountain, from 0 to 100 meters high, then go from 100 to 1000… and the landscapes are unique. I am keen to view somewhere far enough and wide enough.
-		</p>
-	</ul>
-	<h3>Education</h3>
-	<ul>
-		<div class="edu">
-			<strong>Kaplan Foundation Education | University of Liverpool</strong>
-			<br>
-			Overall 82%
-			<br>
-			    - Physical Science (79/100)<br>
-			    - Algorithms, Programming and Data Representation (91/100)<br>
-			    - Mathematics of Science and Engineering (91/100)<br>
-			    - Skills of Study (69/100)<br>
-			    - Language for Study 3 (Exempt - Accredited Prior Learning)<br>
-		</div>
-		<div class="edu">
-			<strong>Artificial Intelligence and Computer Science BSc | University of Birmingham</strong>
-			<br>
-			1st Year : weighted average 71%
-			<br>
-			    - Java Fondamentals (76%)<br>
-			    - Foundation of Mathematics (58%)<br>
-			    - Data Structure (73%)<br>
-			    - Logic and Computation (74%)<br>
-			    - Artificial Intelligence (69%) (completed 2 team projects based on EV3 robot) 
-			<br>
-			2nd Year - PRESENT : N/A
-			<br>
-			- Advanced Functional Programming<br>
-			- Software Engineering (UML; designed a software of handling sleep disorder in a team with 6 people)<br>
-			- Systems Programming in C/ C++<br>
-		</div>
-
-		<div>
-            {% for item in items %}
-            	<div class="edu">
-	            	<div class="cv-titles"><strong>{{item.title}}</strong></div>
-	            	<br>
-	                <div class="cv-texts">{{ item.text|linebreaksbr }}</div>
-	                <br>
-                </div>
-            {% endfor %}
-        </div>
-
-		{% if user.is_authenticated %}
-			<div class="more-and-text">
-			 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_edu()" value="More" />
-			 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experiences</span>
-		 	</div>
-		 	<div class="edu-detail" style="display: none">
-				<form method="POST" name="post-edu">
-					{% csrf_token %}
-			    	<input name="item_title" id="id_new_item" placeholder="More" />
-			    	<br>
-					<textarea cols="70" name="item_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
-					<br>
-					<button type="submit" class="btn-edu">Save</button>
-					<input type="reset" class="btn-edu" id="btn-edu-delete" onclick="hide_edu()" value="Delete" />
-				</form>
+<div class="cv">
+	<div class="cv-col1">
+	    <h2>Curricula Vitae</h2>
+	    <h3>Profile</h3>
+	    <ul>
+			<p>
+			&nbsp;&nbsp;I am currently an undergraduate student (2018-2021) studying Artificial Intelligence in the University of Birmingham. I have developed excellent programming skills and analytical skills during the time. For now, Java is my most familiar language and I have been also learning Haskell, C/C++ and Python in my second year study. I have great interests in Machine Learning, Human-Computer Interaction, Computer Vision. This means that my study will be in the direction of Artificial Intelligence. 
+			Outside the uni life, I am willing to meet more people who are better than me. Sometimes it is like climbing a mountain, from 0 to 100 meters high, then go from 100 to 1000… and the landscapes are unique. I am keen to view somewhere far enough and wide enough.
+			</p>
+		</ul>
+		<h3>Education</h3>
+		<ul>
+			<div class="edu">
+				<div class="cv-titles">
+					<strong>Kaplan Foundation Education | University of Liverpool</strong>
+				</div>
+				<br>
+				<div class="cv-texts">Overall 82%<br>
+				    - Physical Science (79/100)<br>
+				    - Algorithms, Programming and Data Representation (91/100)<br>
+				    - Mathematics of Science and Engineering (91/100)<br>
+				    - Skills of Study (69/100)<br>
+				    - Language for Study 3 (Exempt - Accredited Prior Learning)<br>
+				</div>
 			</div>
-		{% endif %}
-	</ul>
+			<div class="edu">
+				<div class="cv-titles">
+					<strong>Artificial Intelligence and Computer Science BSc | University of Birmingham</strong>
+				</div>
+				<br>
+				<div class="cv-texts">
+					1st Year : weighted average 71%<br>
+				    - Java Fondamentals (76%)<br>
+				    - Foundation of Mathematics (58%)<br>
+				    - Data Structure (73%)<br>
+				    - Logic and Computation (74%)<br>
+				    - Artificial Intelligence (69%) <u>(completed 2 team projects based on EV3 robot)</u><br>
+					2nd Year - PRESENT : N/A<br>
+					- Advanced Functional Programming<br>
+					- Software Engineering <u>(UML: designed a software of handling sleep disorder in a team with 6 people)</u><br>
+					- Systems Programming in C/ C++<br>
+					- Mathematical modeling and Decision Making <u>(was evaluating a dataset by using Principle Component Analysis)</u><br>
+					- Java Team Project <u>(JavaFx game; features: neural network, Q-learning, database)</u><br>
+					- Security and Networking<br>
+				</div>
+			</div>
 
-	<h3>Internship</h3>
-	<ul>
-		<div class="intern">
-		<span><strong>Start date: </strong></span> 12/01/2018<br>
-		<span><strong>End date: </strong></span> 12/16/2019<br>
-		I fortunately joined CSSA Birmingham which is Chinese academic organization. I engaged in organizing several events and festival parties with other members. During the time, I learnt more about cooperation technique and organizing skills. (1 year)
-		</div>
-		<div>
-			{% for intern in interns %}
+			<div>
+	            {% for item in items %}
+	            	<div class="edu">
+		            	<div class="cv-titles"><strong>{{item.title}}</strong></div>
+		            	<br>
+		                <div class="cv-texts">{{ item.text|linebreaksbr }}</div>
+		                <br>
+	                </div>
+	            {% endfor %}
+	        </div>
+
+			{% if user.is_authenticated %}
+				<div class="more-and-text">
+				 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_edu()" value="More" />
+				 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experiences</span>
+			 	</div>
+			 	<div class="edu-detail" style="display: none">
+					<form method="POST" name="post-edu">
+						{% csrf_token %}
+				    	<input name="item_title" id="id_new_item" placeholder="More" />
+				    	<br>
+						<textarea cols="70" name="item_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
+						<br>
+						<button type="submit" class="btn-edu">Save</button>
+						<input type="reset" class="btn-edu" id="btn-edu-delete" onclick="hide_edu()" value="Delete" />
+					</form>
+				</div>
+			{% endif %}
+		</ul>
+
+		<h3>Internship</h3>
+		<ul>
 			<div class="intern">
 				<div class="cv-titles">
-					<span><strong>Start date: </strong></span> {{ intern.start_date }}<br>
-					<span><strong>End date: </strong></span> {{ intern.end_date }}<br>
+					<span><strong>Start date: </strong></span> Dec. 1, 2018<br>
+					<span><strong>End date: </strong></span> Dec. 16, 2019<br>
 				</div>
-				<div class="cv-texts">{{ intern.text|linebreaksbr }}</div>
 				<br>
+				<div class="cv-texts">
+					&nbsp;&nbsp;I fortunately joined CSSA Birmingham which is Chinese academic organization. I engaged in organizing several events and festival parties with other members. During the time, I learnt more about cooperation technique and organizing skills. (1 year)
+				</div>
 			</div>
-			{% endfor %}
-		</div>
-
-		{% if user.is_authenticated %}
-			<div class="more-and-text">
-			 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_intern()" value="More" />
-			 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Internship Experiences</span>
-		 	</div>
-		 	<div class="intern-detail" style="display: none">
-				<form method="POST" name="post-intern">
-					{% csrf_token %}
-			    	<input name="start_date" id="sd" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|[12]\d|3[0-1])[\-/]([0[1-9]|1[0-2])" required/><span style="margin-left: 5px; margin-right: 5px;">to</span><input name="end_date" id="ed" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|[12]\d|3[0-1])[\-/]([0[1-9]|1[0-2])" required/>
-			    	<br>
-					<textarea cols="70" name="intern_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
+			<div>
+				{% for intern in interns %}
+				<div class="intern">
+					<div class="cv-titles">
+						<span><strong>Start date: </strong></span> {{ intern.start_date }}<br>
+						<span><strong>End date: </strong></span> {{ intern.end_date }}<br>
+					</div>
 					<br>
-					<button type="submit" class="btn-edu" onclick="validate_intern()">Save</button>
-					<input type="reset" class="btn-edu" id="btn-edu-delete" onclick="hide_intern()" value="Delete" />
-				</form>
+					<div class="cv-texts">&nbsp;&nbsp;{{ intern.text|linebreaksbr }}</div>
+					<br>
+				</div>
+				{% endfor %}
 			</div>
-		{% endif %}
-	</ul>
+
+			{% if user.is_authenticated %}
+				<div class="more-and-text">
+				 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_intern()" value="More" />
+				 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Internship Experiences</span>
+			 	</div>
+			 	<div class="intern-detail" style="display: none">
+					<form method="POST" name="post-intern">
+						{% csrf_token %}
+				    	<input name="start_date" id="sd" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|1[0-2])[\-/](0[1-9]|[1-2]\d|3[0-1])" required/><span style="margin-left: 5px; margin-right: 5px;">to</span><input name="end_date" id="ed" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|1[0-2])[\-/](0[1-9]|[1-2]\d|3[0-1])" required/>
+				    	<br>
+						<textarea cols="70" name="intern_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
+						<br>
+						<button type="submit" class="btn-edu" onclick="validate_intern()">Save</button>
+						<input type="reset" class="btn-edu" id="btn-edu-delete" onclick="hide_intern()" value="Delete" />
+					</form>
+				</div>
+			{% endif %}
+		</ul>
+	</div>
+	<div class="cv-col2">
+		<div class="buttons">
+            <a href="{% static '/images/Resume_Eng.pdf' %}"><button>EN&nbsp;version</button></a>
+            <a href="{% static '/images/Resume_CN.pdf' %}"><button>CN&nbsp;version</button></a>
+        </div>
+	</div>
+</div>
 
 	<script>
 		function show_edu(){

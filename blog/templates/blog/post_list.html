@@ -12,7 +12,7 @@
 		                {{ post.published_date }}
 		            </div>
 		            <h2><a href="{% url 'post_detail' pk=post.pk %}" style="color: #3d84c1">{{ post.title }}</a></h2>
-		            <p>{{ post.text|linebreaksbr }}</p>
+		            <p>{{ post.text|slice:":250"|linebreaksbr }}...</p>
 		        </div>
 		    {% endfor %}
 		</div>
