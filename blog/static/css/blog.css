@@ -12,6 +12,7 @@ body {
     font-size: 10px;
     font-stretch: condensed;
     background-color: white;
+    line-height: 13pt;
 }
 
 .body-wrap {
@@ -46,7 +47,7 @@ body {
 }
 
 .nav {
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 .nav li, .nav a {
@@ -157,6 +158,16 @@ body {
     width: 99%;
 }
 
+.about-indent {
+    margin-left: 15px;
+}
+
+#about-icons {
+    color: d77d00;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
 .me-img {
     width: 1%;
     margin-left: 100px;
@@ -196,6 +207,10 @@ body {
     margin-left: 10px;
 }
 
+.pg-skills {
+    margin-left: 28px;
+}
+
 .edu {
     margin-bottom: 10px;
 }
@@ -225,12 +240,18 @@ body {
     font-size: 11px;
 }
 
-.cv-texts {
-    margin-left: 12px;
+.project {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.pj-place {
+    margin-top: 10px;
 }
 
 .intern {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .edu-detail {
@@ -282,7 +303,7 @@ body {
 
 .comment-submit {
     float: right;
-    margin-right: 107px;
+    margin-right: 60px;
 }
 
 /* dark mode setting icon */
@@ -301,32 +322,74 @@ body {
 /* footer */
 
 .divide-line {
-    background-color: #3d84c1;
-    height: 2px;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-top: 35px;
+    background-color: #d4d4d4;
+    height: 1px;
+    margin-left: 160px;
+    margin-right: 160px;
+    margin-top: 10px;
 }
 
-.footer {
+footer {
+    margin-top: 45px;
     position: absolute;
     width: 100%;
-    height: 10px;
+    height: 17%;
     z-index: 10;
+    background-color: #f2f2f2;
+}
+
+.footer-content {
+    display: flex;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+.footer-col {
+    margin-right: 70px;
+}
+
+.footer-col a {
+    color: #828282;
+    font-size: 6pt;
+    font-weight: lighter;
+}
+
+.footer-col a:hover {
+    text-decoration: none;
+}
+
+.footer-col-title {
+    font-size:7pt;
+    font-weight: bold;
+}
+
+.footer-logo {
+    margin-top: 8px;
     text-align: center;
 }
 
+.small-logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    
+}
+
+.small-logo:hover{
+  opacity:.7;
+}
+
 .footer-area {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 .copyright {
     display: block;
-    margin-top: .5em;
+    margin-top: 8px;
     color: #828282;
     text-align: center;
-    clear:both
+    font-size: 6pt;
+    clear:both;
 }
 
 

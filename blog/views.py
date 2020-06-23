@@ -58,12 +58,17 @@ def cv(request):
             Item.objects.create(title=request.POST['item_title'], text=request.POST['item_text'])
             return redirect('/mycv')
         else:
-            Intern.objects.create(start_date=request.POST['start_date'], end_date=request.POST['end_date'], text=request.POST['intern_text'])
-            return redirect('/mycv')
+            if not ('place' in data):
+                Intern.objects.create(start_date=request.POST['start_date'], end_date=request.POST['end_date'], text=request.POST['intern_text'])
+                return redirect('/mycv')
+            else:
+                Project.objects.create(start_date=request.POST['start_date'], end_date=request.POST['end_date'], place=request.POST['place'], text=request.POST['intern_text'])
+                return redirect('/mycv')
 
     items = Item.objects.all()
     interns = Intern.objects.all()
-    return render(request, 'blog/cv.html', {'items': items,'interns': interns})
+    projects = Project.objects.all()
+    return render(request, 'blog/cv.html', {'items': items,'interns': interns,'projects': projects})
 
 @csrf_exempt
 def comment(request):

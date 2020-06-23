@@ -13,6 +13,7 @@
     <script>
 	    var i = sessionStorage.getItem("someVarKey");
 	    var element1 = document.getElementById("theme_css");
+
 	    if(i == "dark"){
 	    	element1.href = '{% static 'css/darkmode.css' %}';
 	    }
@@ -54,20 +55,56 @@
     <div class="dark-mode-button" onclick="darken()">
         <i class = "fa fa-cog fa-2x" id="fuck"></i>
     </div>
-    <div class="divide-line"></div>
     <footer>
-        <div class="footer-area"><small class="copyright">Copyright &copy; Wenyue Jin 2020</small></div>
+    	<div class="footer-content">
+    		<div class="footer-col">
+    			<span class="footer-col-title">Navigation</span><br>
+    			<a href="{% url 'cv' %}">Résumé</a><br>
+    			<a href="{% url 'about' %}">About</a><br>
+                <a onclick="darken()"><span style="cursor: pointer;">Darken</span></a>
+    		</div>
+    		<div class="footer-col">
+    			<span class="footer-col-title">Links</span><br>
+    			<a href="{% static '/images/Resume_Eng.pdf' %}">Download CV (EN)</a><br>
+    			<a href="{% static '/images/Resume_CN.pdf' %}">Download CV (CN)</a>
+    		</div>
+			<div class="footer-col">
+    			<span class="footer-col-title">Contact</span><br>
+    			<a href="https://github.com/jwyhhh123">Github</a><br>
+    			<a href="mailto:jwyhhh123@hotmail.com">Email</a>
+    		</div>
+            <div class="footer-col">
+                <a href="{% url 'comment' %}">Comments</a><br>
+            </div>
+    	</div>
+    	<div class="divide-line"></div>
+        <div class="footer-area"><small class="copyright">Copyright &copy; 2020 Wenyue Jin.</small></div>
+        <div class="footer-logo">
+    		<a href="/"><img src="{% static '/images/logo_small_dark.png' %}" alt="icon" class="small-logo" id="sl"></a>
+    	</div>
+
+        <script>
+        var i = sessionStorage.getItem("someVarKey");
+        var element2 = document.getElementById("sl");
+
+        if(i == "dark"){
+            element2.src = '{% static '/images/logo_small_light.png' %}';
+        }
+        </script>
     </footer>
 
     <script>
         function darken(){
             var element1 = document.getElementById("theme_css");
+            var element2 = document.getElementById("sl");
 
             if(sessionStorage.getItem("someVarKey") == "light" || sessionStorage.getItem("someVarKey") == null){
                 element1.href = '{% static 'css/darkmode.css' %}';
+                element2.src = '{% static '/images/logo_small_light.png' %}';
                 sessionStorage.setItem("someVarKey", "dark");
             }else{
                 element1.href = '{% static 'css/blog.css' %}';
+                element2.src = '{% static '/images/logo_small_dark.png' %}';
     			sessionStorage.setItem("someVarKey", "light");
             }
         }

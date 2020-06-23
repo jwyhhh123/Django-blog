@@ -17,8 +17,14 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-class Item(models.Model):
+class Item(models.Model): # Edu
     title = models.CharField(max_length=200)
+    text = models.TextField(default='')
+
+class Project(models.Model):
+    start_date = models.DateField(default='')
+    end_date = models.DateField(default='')
+    place = models.CharField(max_length=80)
     text = models.TextField(default='')
 
 class Intern(models.Model):

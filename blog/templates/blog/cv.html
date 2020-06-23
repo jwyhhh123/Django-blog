@@ -7,11 +7,24 @@
 	    <h2>Curricula Vitae</h2>
 	    <h3>Profile</h3>
 	    <ul>
-			<p>
-			&nbsp;&nbsp;I am currently an undergraduate student (2018-2021) studying Artificial Intelligence in the University of Birmingham. I have developed excellent programming skills and analytical skills during the time. For now, Java is my most familiar language and I have been also learning Haskell, C/C++ and Python in my second year study. I have great interests in Machine Learning, Human-Computer Interaction, Computer Vision. This means that my study will be in the direction of Artificial Intelligence. 
-			Outside the uni life, I am willing to meet more people who are better than me. Sometimes it is like climbing a mountain, from 0 to 100 meters high, then go from 100 to 1000… and the landscapes are unique. I am keen to view somewhere far enough and wide enough.
+			<p>&nbsp;&nbsp;I am currently an undergraduate student (2018-2021) studying Artificial Intelligence in the University of Birmingham. I have developed excellent programming skills and analytical skills during the time. My programming skills are:
+				<div class="pg-skills">
+					<li>(7/10) Java</li>
+					<li>(7/10) Haskell</li>
+					<li>(4/10) C</li>
+					<li>(4/10) Python</li>
+					<li>(8/10) HTML and CSS</li>
+					<li>(5/10) Javascript</li>
+					<li>(9/10) Markdown language</li>
+					<li>(6/10) Unix commands</li></p>
+				</div>
+			<p>I have great interests in Machine Learning, Human-Computer Interaction, Computer Vision. This means that my study will be in the direction of Artificial Intelligence.</p>
+			<p>I am willing to meet more people who are better than me. Sometimes it is like climbing a mountain, from 0 to 100 meters high, then go from 100 to 1000… and the landscapes are unique. I am keen to view somewhere far enough and wide enough.
 			</p>
+			<p>Outside the uni life, I love travelling, cooking, classical music, gaming and astronomy</p>
 		</ul>
+
+<!-- ************************************* Education **************************************** -->
 		<h3>Education</h3>
 		<ul>
 			<div class="edu">
@@ -20,11 +33,11 @@
 				</div>
 				<br>
 				<div class="cv-texts">Overall 82%<br>
-				    - Physical Science (79/100)<br>
-				    - Algorithms, Programming and Data Representation (91/100)<br>
-				    - Mathematics of Science and Engineering (91/100)<br>
-				    - Skills of Study (69/100)<br>
-				    - Language for Study 3 (Exempt - Accredited Prior Learning)<br>
+				    - (79/100) Physical Science<br>
+				    - (91/100) Algorithms, Programming and Data Representation<br>
+				    - (91/100) Mathematics of Science and Engineering<br>
+				    - (69/100) Skills of Study<br>
+				    - Language for Study 3 (Exempt)<br>
 				</div>
 			</div>
 			<div class="edu">
@@ -32,21 +45,21 @@
 					<strong>Artificial Intelligence and Computer Science BSc | University of Birmingham</strong>
 				</div>
 				<br>
-				<div class="cv-texts">
-					1st Year : weighted average 71%<br>
-				    - Java Fondamentals (76%)<br>
-				    - Foundation of Mathematics (58%)<br>
-				    - Data Structure (73%)<br>
-				    - Logic and Computation (74%)<br>
-				    - Artificial Intelligence (69%) <u>(completed 2 team projects based on EV3 robot)</u><br>
-					2nd Year - PRESENT : N/A<br>
+				<p>
+					Year 1: weighted average 71%<br>
+				    - (76%) Java Fondamentals<br>
+				    - (58%) Foundation of Mathematics<br>
+				    - (73%) Data Structure<br>
+				    - (74%) Logic and Computation<br>
+				    - (69%) Artificial Intelligence<br>
+					Year 2: PRESENT : N/A<br>
 					- Advanced Functional Programming<br>
-					- Software Engineering <u>(UML: designed a software of handling sleep disorder in a team with 6 people)</u><br>
+					- Software Engineering<br>
 					- Systems Programming in C/ C++<br>
-					- Mathematical modeling and Decision Making <u>(was evaluating a dataset by using Principle Component Analysis)</u><br>
-					- Java Team Project <u>(JavaFx game; features: neural network, Q-learning, database)</u><br>
+					- Mathematical modeling and Decision Making<br>
+					- Java Team Project<br>
 					- Security and Networking<br>
-				</div>
+				</p>
 			</div>
 
 			<div>
@@ -54,8 +67,7 @@
 	            	<div class="edu">
 		            	<div class="cv-titles"><strong>{{item.title}}</strong></div>
 		            	<br>
-		                <div class="cv-texts">{{ item.text|linebreaksbr }}</div>
-		                <br>
+		                <p>{{ item.text|linebreaksbr }}</p>
 	                </div>
 	            {% endfor %}
 	        </div>
@@ -63,7 +75,7 @@
 			{% if user.is_authenticated %}
 				<div class="more-and-text">
 				 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_edu()" value="More" />
-				 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experiences</span>
+				 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Education Experience</span>
 			 	</div>
 			 	<div class="edu-detail" style="display: none">
 					<form method="POST" name="post-edu">
@@ -79,36 +91,84 @@
 			{% endif %}
 		</ul>
 
+<!-- ************************************** Projects ***************************************** -->
+		<h3>Projects</h3>
+		<ul>
+			<div class="project">
+				<div class="pj-titles">
+					<span><strong>Start date: </strong></span> Oct. 5, 2019<br>
+					<span><strong>&nbsp;&nbsp;End date: </strong></span> Dec. 15, 2019<br>
+					<span><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place:</strong></span> Computer Science Department<br>
+				</div>
+				<br>
+				<p>
+					&nbsp;&nbsp;I was a memeber of a team of six. We were designing a software/app to handle sleep disorder. We wrote a report in UML format which includes: Use Case, Class, Object, Component, Deployment, Activity, State, Sequence Diagrams.
+					I was doing the part of Use case, Class, Component, Sequence, State, Deployment Diagrams.
+					This project gives me more understanding on how agile software engineering works in real life.
+				</p>
+			</div>
+			<div>
+				{% for project in projects %}
+				<div class="project">
+					<div class="pj-titles">
+						<span><strong>Start date: </strong></span> {{ project.start_date }}<br>
+						<span><strong>&nbsp;&nbsp;End date: </strong></span> {{ project.end_date }}<br>
+						<span><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place:</strong></span> {{ project.place }}<br>
+					</div>
+					<br>
+					<p>&nbsp;&nbsp;{{ project.text|linebreaksbr }}</p>
+				</div>
+				{% endfor %}
+			</div>
+			{% if user.is_authenticated %}
+				<div class="more-and-text">
+				 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_project()" value="More" />
+				 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Project</span>
+			 	</div>
+			 	<div class="project-detail" style="display: none">
+					<form method="POST" name="post-project">
+						{% csrf_token %}
+				    	<input name="start_date" id="sd" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|1[0-2])[\-/](0[1-9]|[1-2]\d|3[0-1])" required/><span style="margin-left: 5px; margin-right: 5px;">to</span><input name="end_date" id="ed" placeholder="yyyy-mm-dd" pattern="(196[1-9]|19[7-9]\d|20\d\d|2100)[\-/](0[1-9]|1[0-2])[\-/](0[1-9]|[1-2]\d|3[0-1])" required/>
+				    	<br>
+				    	<input name="place" class="pj-place" placeholder="place" /><br>
+						<textarea cols="70" name="intern_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
+						<br>
+						<button type="submit" class="btn-edu" onclick="validate_input()">Save</button>
+						<input type="reset" class="btn-edu" id="btn-edu-delete" onclick="hide_project()" value="Delete" />
+					</form>
+				</div>
+			{% endif %}
+		</ul>
+
+<!-- ************************************* Internship **************************************** -->
 		<h3>Internship</h3>
 		<ul>
 			<div class="intern">
 				<div class="cv-titles">
 					<span><strong>Start date: </strong></span> Dec. 1, 2018<br>
-					<span><strong>End date: </strong></span> Dec. 16, 2019<br>
+					<span><strong>&nbsp;&nbsp;End date: </strong></span> Dec. 16, 2019<br>
 				</div>
 				<br>
-				<div class="cv-texts">
+				<p>
 					&nbsp;&nbsp;I fortunately joined CSSA Birmingham which is Chinese academic organization. I engaged in organizing several events and festival parties with other members. During the time, I learnt more about cooperation technique and organizing skills. (1 year)
-				</div>
+				</p>
 			</div>
 			<div>
 				{% for intern in interns %}
 				<div class="intern">
 					<div class="cv-titles">
 						<span><strong>Start date: </strong></span> {{ intern.start_date }}<br>
-						<span><strong>End date: </strong></span> {{ intern.end_date }}<br>
+						<span><strong>&nbsp;&nbsp;End date: </strong></span> {{ intern.end_date }}<br>
 					</div>
 					<br>
-					<div class="cv-texts">&nbsp;&nbsp;{{ intern.text|linebreaksbr }}</div>
-					<br>
+					<p>&nbsp;&nbsp;{{ intern.text|linebreaksbr }}</p>
 				</div>
 				{% endfor %}
 			</div>
-
 			{% if user.is_authenticated %}
 				<div class="more-and-text">
 				 	<input type="button" class="btn-edu" id="btn-edu-add" onclick="show_intern()" value="More" />
-				 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Internship Experiences</span>
+				 	<span style="font-size: 12px; font-style: italic; margin-left: 5px; color: c0c0c0;">Add Internship Experience</span>
 			 	</div>
 			 	<div class="intern-detail" style="display: none">
 					<form method="POST" name="post-intern">
@@ -117,7 +177,7 @@
 				    	<br>
 						<textarea cols="70" name="intern_text" rows="5" maxlength="3000" class="text-field" style="height: auto;width:600px;"></textarea>
 						<br>
-						<button type="submit" class="btn-edu" onclick="validate_intern()">Save</button>
+						<button type="submit" class="btn-edu" onclick="validate_input()">Save</button>
 						<input type="reset" class="btn-edu" id="btn-edu-delete" onclick="hide_intern()" value="Delete" />
 					</form>
 				</div>
@@ -143,6 +203,16 @@
 		    show_part.style.display = 'none';
 	    }
 
+	    function show_project(){
+			var show_part = document.querySelector('.project-detail');
+			show_part.style.display = '';
+		}
+
+		function hide_project(){
+		    var show_part = document.querySelector('.project-detail');
+		    show_part.style.display = 'none';
+	    }
+
 	    function show_intern(){
 			var show_part = document.querySelector('.intern-detail');
 			show_part.style.display = '';
@@ -153,7 +223,7 @@
 		    show_part.style.display = 'none';
 	    }
 
-	    function validate_intern(){
+	    function validate_input(){
              var sd = document.getElementById("sd");
              var ed = document.getElementById("ed");
              var svd = sd.validity;
