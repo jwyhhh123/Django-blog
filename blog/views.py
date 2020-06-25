@@ -78,4 +78,5 @@ def comment(request):
     comments = Comment.objects.all()
     return render(request, 'blog/comment.html', {'comments': comments})
 
-
+def home(request):
+    return render(request, 'blog/home.html', {})

@@ -11,4 +11,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('mycv/',views.cv, name='cv'),
     path('comment/',csrf_exempt(views.comment), name='comment'),
+    path('home/',views.home, name='home'),
 ]

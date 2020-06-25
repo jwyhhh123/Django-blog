@@ -12,13 +12,13 @@
 		                {{ post.published_date }}
 		            </div>
 		            <h2><a href="{% url 'post_detail' pk=post.pk %}" style="color: #3d84c1">{{ post.title }}</a></h2>
-		            <p>{{ post.text|slice:":250"|linebreaksbr }}...</p>
+		            <p>{{ post.text|slice:":300"|linebreaksbr }}...</p>
 		        </div>
 		    {% endfor %}
 		</div>
 	    <div class="col-2">
             <div class="buttons">
-    			<a href="/"><button>Click Me</button></a>
+    			<a href="{% url 'home' %}"><button>Click Me</button></a>
     			<a href="{% url 'comment' %}"><button>Comments</button></a>
   			</div>
         </div>

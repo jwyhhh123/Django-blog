@@ -4,33 +4,24 @@
 {% block content %}
 <div class="about-container">
 	<div class="about-content">
-		<h2>About Me</h2>
-		<p>Hi, I am Wenyue Jin, a computer science student in the University of Birmingham. Welcome to my website.</p>
-		<p>I am a person with many hobbies, for example travelling, cooking, astronomy, gaming and classical music.</p>
-		<div class="about-indent">
-			<p><i class="fa fa-luggage-cart" id="about-icons"></i>I have been to many countries: Germany, Italy, Austria, Switzerland, Spain, France, Thailand, Malaysia and UK. On my travelling list I am planning to go to USA and Greece.</p>
-
-			<p><i class="fa fa-hamburger" id="about-icons"></i>I like cooking, mostly following chinese traditional recipes. Usually when cooking, one needs to control not only flavour but also time that the ingredients are being in the pot. Flavouring is the other important part, different food has different ability to incorperate flavours, that is what a cook has to learn from trying again and again.</p>
-
-			<p><i class="fa fa-space-shuttle" id="about-icons"></i>How much possibility that there are alien creatures? This question excites my curiosity from time to time. From human exploring Mars to detectors discovering Titan, we are eager to explore the universe futher and futher. There is no limit of what would be there.</p>
-
-			<p><i class="fa fa-gamepad" id="about-icons"></i>I am an experienced gamer... do not ask me what I experienced, every gamer would know it. My favourate games are Monster Hunter: World, Overwatch. I also play other games with my friends on Steam, Blizzard and Origin.</p>
-
-			<p><i class="fa fa-music" id="about-icons"></i>When the assignments made me almost collapse, listening classical symphonies and songs really helped. Classic is eternal! I like Mozart and Grieg the most.</p>
-		</div>
-		<p>Back to the topic, My current study interest is in Artificial Intelligence. I appreciate the opportunity that the univesity provides me rich resources and knowledge from many different fields. Currently I am in my second year study and I have learnt:</p>
-		<div class="about-indent">
-			<li>Mathematical Foundations</li>
-			<li>Logic</li>
-			<li>Data Structure</li>
-			<li>Java</li>
-			<li>Artificial Intelligence (Basic)</li>
-			<li>Functional programming (Haskell)</li>
-			<li>Mathematical modeling and decision making</li>
-			<li>Security and Networking</li>
-			<li>Software Engineering</li>
-			<li>System programming and C/C++</li>
-			<li>JavaFx Team Project</li>
+		<div class="about-header">
+			<div class="about-vertical-line"></div>
+			<div class="about-title">
+				<span style="font-size: 30px;">I am Wenyue Jin</span><br>
+				<div class="about-subtitle">
+					a computer science student<br>in the <span style="color: #d77d00;">U</span>niversity <span style="color: #d77d00;">o</span>f <span style="color: #d77d00;">B</span>irmingham.
+				</div>
+				<div>
+					<span style="font-size: 12px;">There are many things I like:</span><br>
+					<div class="hobby-links">
+						<a id="h-link">travelling</a> |
+						<a id="h-link">cooking</a> |
+						<a id="h-link">gaming</a> | 
+						<a id="h-link">astronomy</a> |
+						<a id="h-link">classical music</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="me-img">
@@ -39,6 +30,69 @@
 			<div style="margin-top: 16px; margin-left: 18px;"><span>Photo&nbsp;taken&nbsp;in</span></div>
 			<div><span>Hallstatt,&nbsp;Austria</span></div>
 		</div>
+	</div>
+</div>
+<div>
+	<div style="background: url({% static '/images/b1.jpeg' %}) no-repeat center center;height:400px;width:2100px;margin-left:-200px;background-size: 100% 100%;-moz-background-size: 100% 100%;">
+	</div>
+	<div class="about-background1-text">
+		I have been to many countries:<br> 
+		<div id="abt-t1">
+			Germany, Italy, Austria,<br> 
+			Switzerland, Spain, France,<br>
+			Thailand, Malaysia and UK.<br>
+		</div>
+		<div style="margin-top: 20px;">
+			On my travelling list,<br> I am planning to go to<br>
+			<div id="abt-t2">USA and Greece.</div>
+		</div>
+	</div>
+</div>
+<div class="about-background2">
+	<div class="abt-bg2-col">
+		<div class="about-ftq" style="background:url({% static '/images/fotiaoqiang.jpeg' %}) no-repeat center center;background-size: 100% 100%;-moz-background-size: 100% 100%;">
+			<span>Fo Tiao Qiang:<br><br>a stew of chicken, duck, pig's feet, and numerous dried seafoods in wine soup stock, prepared in a huge wine jar </span>
+		</div>
+	</div>
+	<div>
+		<div class="about-background2-text">
+			I like <span id="abt-t3">cooking</span>, mostly following chinese traditional recipes.<br><br>
+			<span>One needs to control the time that the ingredients are being in the pot.<br><br> Flavouring is important as different food has different ability to incorperate flavours, that is what a cook has to learn from trying again and again.</span>
+		</div>
+	</div>
+</div>
+<div class="about-background3">
+	<div style="margin-top: 40px;">
+		I am a <span id="abt-t3">gamer</span>.<br><br>
+		I play many games with my friends on platforms like<br>
+		<span style="color: #828282;">Steam</span>, <span style="color: #828282;">Blizzard</span> and <span style="color: #828282;">Origin</span>.<br><br>
+		My favourate games are Monster Hunter: World, Overwatch.
+	</div>
+	<div>
+		<div class="about-games" style="background:url({% static '/images/games.png' %}) no-repeat center center;background-size: 100% 100%;-moz-background-size: 100% 100%;margin-left: 100px;">
+		</div>
+	</div>
+</div>
+<div>
+
+	<p><i class="fa fa-space-shuttle" id="about-icons"></i>How much possibility that there are alien creatures? This question excites my curiosity from time to time. From human exploring Mars to detectors discovering Titan, we are eager to explore the universe futher and futher. There is no limit of what would be there.</p>
+
+	<p><i class="fa fa-music" id="about-icons"></i>When the assignments made me almost collapse, listening classical symphonies and songs really helped. Classic is eternal! I like Mozart and Grieg the most.</p>
+</div>
+<div>
+	<p>Back to the topic, My current study interest is in Artificial Intelligence. I appreciate the opportunity that the univesity provides me rich resources and knowledge from many different fields. Currently I am in my second year study and I have learnt:</p>
+	<div class="about-indent">
+		<li>Mathematical Foundations</li>
+		<li>Logic</li>
+		<li>Data Structure</li>
+		<li>Java</li>
+		<li>Artificial Intelligence (Basic)</li>
+		<li>Functional programming (Haskell)</li>
+		<li>Mathematical modeling and decision making</li>
+		<li>Security and Networking</li>
+		<li>Software Engineering</li>
+		<li>System programming and C/C++</li>
+		<li>JavaFx Team Project</li>
 	</div>
 </div>
 {% endblock %}
