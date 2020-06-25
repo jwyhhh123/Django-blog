@@ -21,7 +21,7 @@
 	</script>
     <body>
         <div class="page-header">
-            <div class="header-icon">
+            <div class="header-icon" id="page-top">
                 <a href="/"><img src="{% static '/images/logo.png' %}" alt="icon" class="menu-logo"></a>
                 <h1><a href="/" class="blog-title">Wenyue's Blog</a></h1>
             </div>
@@ -43,8 +43,13 @@
             </div>
         </div>
     </body>
-    <div class="dark-mode-button" onclick="darken()">
-        <i class = "fa fa-cog fa-2x" id="fuck"></i>
+    <div class="interactives">
+        <div class="go-home">
+            <a href="#page-top"><i class = "fa fa-angle-up fa-2x" id="fuck"></i></a>
+        </div>
+        <div class="dark-mode-button" onclick="darken()">
+            <i class = "fa fa-cog fa-2x" id="fuck"></i>
+        </div>
     </div>
     <footer>
     	<div class="footer-content">
