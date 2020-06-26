@@ -6,6 +6,9 @@ from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
+def about(request): # home page
+    return render(request, 'blog/about.html', {})
+
 def post_list(request):
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'blog/post_list.html', {'posts': posts})
@@ -46,9 +49,6 @@ def post_remove(request, pk):
     post.delete()
     return redirect('post_list')
 
-def about(request):
-    return render(request, 'blog/about.html', {})
-
 def cv(request):
     if request.method == 'POST':
         data = request.body.decode()
@@ -78,5 +78,3 @@ def comment(request):
     comments = Comment.objects.all()
     return render(request, 'blog/comment.html', {'comments': comments})
 
-def home(request):
-    return render(request, 'blog/home.html', {})

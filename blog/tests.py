@@ -1,15 +1,15 @@
 from django.test import TestCase
 from django.urls import resolve
-from blog.views import post_list
+from blog.views import *
 from .models import *
 from django.contrib.auth.models import User
 
 # Create your tests here.
 class HomePageTest(TestCase):
 	
-	def test_root_url_resolves_to_post_list_view(self):
+	def test_root_url_resolves_to_about_page(self):
 		found = resolve('/')
-		self.assertEqual(found.func, post_list)
+		self.assertEqual(found.func, about)
 
 class PostTest(TestCase):
 
@@ -17,12 +17,11 @@ class PostTest(TestCase):
 		u = User.objects.create_user('Chevy Chase','chevyspassword')
 		Post.objects.create(author=u,title='This is a test post.',text='hello',created_date='1999-01-01',published_date='1999-01-01')
 		Post.objects.create(author=u,title='Oh no.',text='world',created_date='1999-01-01',published_date='1999-01-01')
-		response = self.client.get('/')
+		response = self.client.get('/post/')
 		self.assertIn('This is a test post', response.content.decode())
 		self.assertIn('hello', response.content.decode())
 		self.assertIn('Oh', response.content.decode())
 		self.assertIn('world', response.content.decode())
-
 
 class CVPageTest(TestCase):
 
@@ -36,6 +35,20 @@ class CVPageTest(TestCase):
 		self.assertIn('this is test 1.', response.content.decode())
 		self.assertIn('test_edu 2', response.content.decode())
 		self.assertIn('this is test 2.', response.content.decode())
+
+	def test_displays_all_items_in_project_field(self):
+		Project.objects.create(start_date='1999-06-01',end_date='1999-12-01',place='Harvard', text='Hi.')
+		Project.objects.create(start_date='1999-01-02',end_date='1999-02-02',place='Harvard', text='Bye.')
+
+		response = self.client.get('/mycv/')
+
+		self.assertIn('June', response.content.decode())
+		self.assertIn('Dec.', response.content.decode())
+		self.assertIn('Hi.', response.content.decode())
+		self.assertIn('Jan', response.content.decode())
+		self.assertIn('Feb', response.content.decode())
+		self.assertIn('Bye.', response.content.decode())
+		self.assertIn('Harvard', response.content.decode())
 
 	def test_displays_all_items_in_intern_field(self):
 		Intern.objects.create(start_date='1999-06-01',end_date='1999-12-01', text='Hi.')

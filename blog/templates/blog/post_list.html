@@ -8,17 +8,21 @@
 		<div class="col-1">
 		    {% for post in posts %}
 		        <div class="post">
-		            <div class="date">
-		                {{ post.published_date }}
+		        	<div style="display: flex;">
+			        	<div>
+			        		<div class="post-line"></div>
+			        	</div>
+			            <div class="pcontent"><a href="{% url 'post_detail' pk=post.pk %}">
+		            		<h2>{{ post.title }}</h2>
+		            		{{ post.text|slice:":260"|linebreaksbr }}...</a>
+		            	</div>
 		            </div>
-		            <h2><a href="{% url 'post_detail' pk=post.pk %}" style="color: #3d84c1">{{ post.title }}</a></h2>
-		            <p>{{ post.text|slice:":300"|linebreaksbr }}...</p>
 		        </div>
 		    {% endfor %}
 		</div>
 	    <div class="col-2">
             <div class="buttons">
-    			<a href="{% url 'home' %}"><button>Click Me</button></a>
+            	<a href="{% url 'about' %}"><button>Home</button></a>
     			<a href="{% url 'comment' %}"><button>Comments</button></a>
   			</div>
         </div>

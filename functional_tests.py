@@ -29,13 +29,13 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Copyright',footer_text)
 
         # Check the 'About' page linked homepage
-        self.browser.find_element_by_link_text('About').click()
+        self.browser.find_element_by_link_text('Posts').click()
         sleep(1)
-        about_text = self.browser.find_element_by_tag_name('p').text
-        self.assertIn('This is the website of Wenyue Jin.', about_text)
+        about_text = self.browser.find_element_by_class_name('contact-detail').text
+        self.assertIn('Find me on', about_text)
 
         # Check the 'Resume' page linked homepage
-        self.browser.find_element_by_class_name('nav__link3').click()
+        self.browser.find_element_by_id('resume').click()
         sleep(1)
         cv_text = self.browser.find_element_by_tag_name('p').text
         self.assertIn('I am keen to view somewhere far enough and wide enough.', cv_text)
@@ -71,11 +71,11 @@ class NewVisitorTest(unittest.TestCase):
 
         # Check that the color of the current page has turned into black.
         sleep(1)
-        self.assertEquals('#0c090a', black)
+        self.assertEquals('#1e1e1e', black)
 
         # The black color should be remained in any other page.
         # Click another page, in this case 'About'
-        self.browser.find_element_by_link_text('About').click()
+        self.browser.find_element_by_link_text('Posts').click()
         sleep(1)
 
         # Obtain the background in 'About' page.
