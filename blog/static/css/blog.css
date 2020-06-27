@@ -781,17 +781,23 @@ and (max-device-width : 480px) {
         font-size: 18px;
     }
 
+    .about-background2 {
+        font-size: 8px;
+        flex-direction: row-reverse;
+    }
+
     .about-background3 {
         font-size: 8px;
     }
 
     .about-background3-text {
-        margin-right: 2%
+        margin-right: 2%;
+        margin-left: -10px;
     }
 
     .about-background4-text {
         font-size: 8px;
-        margin-left: -10px;
+        margin-left: -5px;
     }
 
     .about-background5-text {
@@ -803,11 +809,11 @@ and (max-device-width : 480px) {
     }
 
     .post-line {
-        height: 160px;
+        height: 250px;
     }
 
     .footer-col {
-        margin-right: 25px;
+        margin-right: 18px;
     }
 }
 
