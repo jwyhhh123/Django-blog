@@ -793,14 +793,18 @@ and (max-device-width : 480px) {
     }
 
     #im-wyj {
-        font-size: 18px;
+        font-size: 15px;
     }
 
-    .about-background2, .about-background3,.about-background4-text,.about-background1-text {
+    .about-container {
+        flex-direction: column-reverse;
+    }
+
+    .about-background1-text, .about-background2, .about-background3, {
         font-size: 8px;
     }
 
-    .about-background2,.about-background3 {
+    .about-background2, .about-background3 {
         flex-direction: column;
     }
 
@@ -812,19 +816,32 @@ and (max-device-width : 480px) {
     }
 
     .about-ftq{ 
-        height: 120px;
-        width: 125px;
+        height: 135px;
+        width: 145px;
     }
 
     .about-games{ 
-        margin-right: -100px;
+        margin-right: -1px;
         height: 100px;
-        width: 300px;
+        width: 280px;
     }
 
     .about-background3-text {
+        margin-top: 10px;
         margin-right: 2%;
         margin-left: -10px;
+    }
+
+    .about-background4 {
+        margin-left:-58px;
+        margin-top: -60px;
+    }
+
+    .about-background4-text {
+        margin-top: -320px;
+        margin-right: 20%;
+        margin-left: 15%;
+        font-size: 8px;
     }
 
     .about-background5-text {
@@ -836,7 +853,7 @@ and (max-device-width : 480px) {
     }
 
     .about-edu,.about-edu-modules {
-        font-style: 8px;
+        font-size: 8px;
     }
 
     .cv-profile {
@@ -851,7 +868,7 @@ and (max-device-width : 480px) {
     }
 
     footer {
-        height: 180px;
+        height: 179px;
     }
 
     .footer-col {
