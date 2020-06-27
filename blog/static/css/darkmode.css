@@ -779,12 +779,16 @@ and (max-device-width : 480px) {
         padding: 20px 20px 20px 10px;
     }
 
+    .blog-title {
+        font-size: 20px;
+    }
+
     .content {
         margin-left: -10px;
     }
 
     .nav {
-        margin-left: 5px;
+        margin-left: 8px;
     }
 
     .nav li, .nav a {
@@ -796,12 +800,7 @@ and (max-device-width : 480px) {
         font-size: 18px;
     }
 
-    .about-background2 {
-        font-size: 8px;
-        flex-direction: row-reverse;
-    }
-
-    .about-background3 {
+    .about-background2, .about-background3 {
         font-size: 8px;
     }
 
@@ -812,7 +811,7 @@ and (max-device-width : 480px) {
 
     .about-background4-text {
         font-size: 8px;
-        margin-left: -5px;
+        margin-left: -2px;
     }
 
     .about-background5-text {
@@ -823,12 +822,23 @@ and (max-device-width : 480px) {
         text-align: left;
     }
 
+    .cv-profile {
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: -10px;
+        flex-direction: column;
+    }
+
     .post-line {
-        height: 250px;
+        height: 280px;
+    }
+
+    footer {
+        height: 172px;
     }
 
     .footer-col {
-        margin-right: 18px;
+        margin-right: 15px;
     }
 }
 
