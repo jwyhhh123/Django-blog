@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="posts-container">
+    <div class="posts-container" id="pc-detail">
         <div class="col-1">
             {% if post.published_date %}
             	<div class="date">
@@ -14,6 +14,7 @@
         <div class="col-2">
             {% if user.is_authenticated %}
                 <div class="buttons">
+                    <a href="{% url 'post_list' %}"><button>Back</button></a>
                     <a href="{% url 'post_edit' pk=post.pk %}"><button>Edit</button></a>
                     <a href="{% url 'post_remove' pk=post.pk %}"><button>Delete</button></a>
                 </div>

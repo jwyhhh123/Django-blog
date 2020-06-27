@@ -8,19 +8,44 @@
 <div class="cv">
 	<div class="cv-col1">
 	    <h3>Profile</h3>
-	    <ul>
-	    	<div style="display: flex;">
-				<div style="margin-right: 50px;">
-					I am an undergraduate (2018-2021) studying in Computer Science & Artificial Intelligence in the University of Birmingham.<br><br> 
-					In my student career, I have developed excellent programming skills and analytical skills. Machine Learning, Computer Vision are the areas that I am interested in.<br><br>
-					My hobbies are many. I love travelling, cooking, classical music, gaming and astronomy.
+	    
+	    <div id="cv-section">
+	    	<div class="cv-profile">
+				<div style="margin-right: 5%;margin-top: 5px;">
+					<table border="0" id="cp">
+						<tr>
+	    					<td>Name:</td>
+	    					<td id="cp-col2">Wenyue Jin</td>
+						</tr>
+						 <tr>
+						    <td>Gender:</td>
+						    <td id="cp-col2">Male</td>
+						 </tr>
+						 <tr>
+	    					<td>Study:</td>
+	    					<td id="cp-col2">Computer Science (AI)</td>
+						</tr>
+						 <tr>
+						    <td>Interests:</td>
+						    <td id="cp-col2">Machine&nbsp;Learning, Computer&nbsp;Vision</td>
+						 </tr>
+						 <tr>
+	    					<td>University:</td>
+	    					<td id="cp-col2">University&nbsp;of&nbsp;Birmingham</td>
+						</tr>
+						<tr>
+	    					<td>Languages:</td>
+	    					<td id="cp-col2">Mandarin,&nbsp;English</td>
+						</tr>
+						<tr>
+	    					<td>Hobbies</td>
+	    					<td id="cp-col2">Travel,&nbsp;Cooking, Gaming,&nbsp;Astronomy, Classical Music</td>
+						</tr>
+					</table>
 				</div>
-				<div id="piechart" style="text-align: center;"></div>
+				<div id="piechart"></div>
 			</div>
-			 
-			<p>I am willing to meet more people who are better than me. Sometimes it is like climbing a mountain, from 0 to 100 meters high, then go from 100 to 1000… and the landscapes are unique. I am keen to view somewhere far enough and wide enough.
-			</p>
-		</ul>
+		</div>
 
 		<script type="text/javascript">
 			google.charts.load('current', {'packages':['corechart']});
@@ -52,7 +77,7 @@
 
 <!-- ************************************* Education **************************************** -->
 		<h3>Education</h3>
-		<ul>
+		<div id="cv-section">
 			<div class="edu">
 				<div class="cv-titles">
 					<strong>Kaplan Foundation Education | University of Liverpool</strong>
@@ -112,11 +137,11 @@
 					</form>
 				</div>
 			{% endif %}
-		</ul>
+		</div>
 
 <!-- ************************************** Projects ***************************************** -->
 		<h3>Projects</h3>
-		<ul>
+		<div id="cv-section">
 			<div class="project">
 				<div class="pj-titles">
 					<span><strong>From&nbsp;: </strong></span> Oct. 5, 2019<br>
@@ -159,11 +184,11 @@
 					</form>
 				</div>
 			{% endif %}
-		</ul>
+		</div>
 
 <!-- ************************************* Internship **************************************** -->
 		<h3>Internship</h3>
-		<ul>
+		<div id="cv-section">
 			<div class="intern">
 				<div class="cv-titles">
 					<span><strong>Start date: </strong></span> Dec. 1, 2018<br>
@@ -201,7 +226,7 @@
 					</form>
 				</div>
 			{% endif %}
-		</ul>
+		</div>
 	</div>
 	<div class="cv-col2">
 		<div class="buttons">

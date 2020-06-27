@@ -88,6 +88,10 @@ body {
     color: white;
 }
 
+#pc-detail {
+    margin-bottom: 25%;
+}
+
 .contact-detail {
     margin-bottom: 8px;
     font-style: italic;
@@ -123,7 +127,7 @@ body {
 
 .post-line {
     margin-right: 10px;
-    height: 120px;
+    height: 126px;
     width: 5px;
     background-color: #3d84c1;
 }
@@ -285,6 +289,7 @@ body {
 .about-background1-text {
     padding-top: 100px;
     margin-bottom: 10px;
+    margin-left: -10px;
     font-size: 15px;
     text-align: center;
     color: white;
@@ -376,7 +381,14 @@ body {
 }
 
 .about-background4 {
-    margin-bottom: 300px;
+    background-color: black;
+    height:400px;
+    width:138.1%;
+    margin-left:-52px;
+    margin-top: -60px;
+    margin-bottom: 10px;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
 }
 
 .about-background4-text {
@@ -386,6 +398,17 @@ body {
     font-size: 15px;
     text-align: center;
     color: white;
+}
+
+.about-background5 {
+    background-color: d7d7d7;
+    height:400px;
+    width:138.1%;
+    margin-left:-52px;
+    margin-top: 15px;
+    margin-bottom: 60px;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
 }
 
 .about-background5-text {
@@ -423,9 +446,15 @@ body {
     opacity: 0.5;
 }
 
-.about-education {
+.about-edu {
+    margin-right: 25px;
+    padding: 30px 50px 30px 10px;
+}
+
+.about-edu-modules {
     margin-left: 12px;
-    margin-right: -15%;
+    margin-right: -12%;
+    padding-top: 20px;
 }
 
 /* cv page css */
@@ -443,7 +472,7 @@ body {
     padding-bottom: 6px;
 }
 
-.cv-col1 ul {
+#cv-section {
     margin-bottom: 50px;
 }
 
@@ -453,8 +482,30 @@ body {
     margin-left: 10px;
 }
 
-.pg-skills {
-    margin-left: 28px;
+.cv-profile {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: -21px;
+}
+
+#cp {
+    font-size: 12px;
+}
+
+#cp td {
+    padding-bottom: 15px;
+    line-height: 1.7rem;
+}
+
+#cp tr:hover {
+    color: #d77d00;
+    transition-duration: 0.3s;
+    cursor: default;
+}
+
+#cp-col2 {
+    padding-left: 15px;
+    font-size: 10px;
 }
 
 .edu {
@@ -706,5 +757,22 @@ footer {
     clear:both;
 }
 
+/* Smartphones (portrait and landscape) --- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    /* Styles */
+}
 
+/* Smartphones (landscape) --- */
+@media only screen 
+and (min-width : 321px) {
+    /* Styles */
+}
+
+/* Smartphones (portrait) --- */
+@media only screen 
+and (max-width : 320px) {
+    /* Styles */
+}
 
