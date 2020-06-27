@@ -779,8 +779,8 @@ and (max-device-width : 480px) {
         padding: 20px 20px 20px 10px;
     }
 
-    .blog-title {
-        font-size: 20px;
+    .header-icon h1, .header-icon h1 a, .header-icon h1 a:visited, .header-icon h1 a:active {
+        font-size: 20pt;
     }
 
     .content {
@@ -800,18 +800,24 @@ and (max-device-width : 480px) {
         font-size: 18px;
     }
 
-    .about-background2, .about-background3 {
+    .about-background2, .about-background3,.about-background4-text,.about-background1-text {
         font-size: 8px;
+    }
+
+    .about-ftq{ 
+        height: 150px;
+        width: 150px;
+    }
+
+    .about-games{ 
+        margin-right: -100px;
+        height: 100px;
+        width: 350px;
     }
 
     .about-background3-text {
         margin-right: 2%;
         margin-left: -10px;
-    }
-
-    .about-background4-text {
-        font-size: 8px;
-        margin-left: -2px;
     }
 
     .about-background5-text {
@@ -830,15 +836,15 @@ and (max-device-width : 480px) {
     }
 
     .post-line {
-        height: 280px;
+        height: 298px;
     }
 
     footer {
-        height: 172px;
+        height: 178px;
     }
 
     .footer-col {
-        margin-right: 15px;
+        margin-right: 12px;
     }
 }
 
