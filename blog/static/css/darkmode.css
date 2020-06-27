@@ -783,10 +783,6 @@ and (max-device-width : 480px) {
         font-size: 20pt;
     }
 
-    .content {
-        margin-left: -40px;
-    }
-
     .nav {
         margin-left: 8px;
     }
@@ -806,20 +802,20 @@ and (max-device-width : 480px) {
 
     .about-background2-text {
         margin-bottom: 10px;
-        margin-top: 75px;
-        margin-left: 10px;
-        margin-right: -20px;
+        margin-top: 50px;
+        margin-left: 1px;
+        margin-right: -5px;
     }
 
     .about-ftq{ 
-        height: 150px;
-        width: 150px;
+        height: 120px;
+        width: 125px;
     }
 
     .about-games{ 
         margin-right: -100px;
         height: 100px;
-        width: 350px;
+        width: 300px;
     }
 
     .about-background3-text {
@@ -843,7 +839,7 @@ and (max-device-width : 480px) {
     }
 
     .post-line {
-        height: 60px;
+        height: 64px;
     }
 
     footer {
@@ -851,19 +847,8 @@ and (max-device-width : 480px) {
     }
 
     .footer-col {
-        margin-right: 9px;
+        margin-right: 5px;
     }
 }
 
-/* Smartphones (landscape) --- */
-@media only screen 
-and (min-width : 321px) {
-    /* Styles */
-}
-
-/* Smartphones (portrait) --- */
-@media only screen 
-and (max-width : 320px) {
-    /* Styles */
-}
 
