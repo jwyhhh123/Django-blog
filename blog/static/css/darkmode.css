@@ -784,7 +784,7 @@ and (max-device-width : 480px) {
     }
 
     .content {
-        margin-left: -10px;
+        margin-left: -40px;
     }
 
     .nav {
@@ -804,6 +804,13 @@ and (max-device-width : 480px) {
         font-size: 8px;
     }
 
+    .about-background2-text {
+        margin-bottom: 10px;
+        margin-top: 75px;
+        margin-left: 10px;
+        margin-right: -20px;
+    }
+
     .about-ftq{ 
         height: 150px;
         width: 150px;
@@ -821,7 +828,7 @@ and (max-device-width : 480px) {
     }
 
     .about-background5-text {
-        padding-top: 80px;
+        padding-top: 30px;
         margin-right: 20%;
         margin-left: 20%;
         font-size: 8px;
@@ -836,15 +843,15 @@ and (max-device-width : 480px) {
     }
 
     .post-line {
-        height: 298px;
+        height: 60px;
     }
 
     footer {
-        height: 178px;
+        height: 180px;
     }
 
     .footer-col {
-        margin-right: 12px;
+        margin-right: 9px;
     }
 }
 
