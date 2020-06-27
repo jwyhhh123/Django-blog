@@ -796,7 +796,7 @@ and (max-device-width : 480px) {
         font-size: 15px;
     }
 
-    .about-container {
+    .about-container,.about-background3 {
         flex-direction: column-reverse;
     }
 
@@ -805,11 +805,16 @@ and (max-device-width : 480px) {
         margin-top: 10px;
     }
 
+    .about-title {
+        margin-top: 50px;
+        margin-left: 1px;
+    }
+
     .about-background1-text, .about-background2, .about-background3 {
         font-size: 8px;
     }
 
-    .about-background2, .about-background3, .about-background6 {
+    .about-background2, .about-background6 {
         flex-direction: column;
     }
 
@@ -826,7 +831,8 @@ and (max-device-width : 480px) {
     }
 
     .about-games{ 
-        margin-right: -1px;
+        margin-right: 0px;
+        margin-left: -40px;
         height: 100px;
         width: 280px;
     }
