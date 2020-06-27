@@ -376,6 +376,11 @@ body {
     display: flex;
 }
 
+.about-background3-text {
+    margin-top: 40px;
+    margin-right: 10%
+}
+
 .about-games{ 
     position:relative;
     margin-top: 1px;
@@ -750,12 +755,43 @@ footer {
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
+
+    .page-header {
+        padding: 20px 20px 20px 10px;
+    }
+
+    .content {
+        margin-left: 10px;
+    }
+
+    .nav li, .nav a {
+        float: left;
+        padding: 12px 10px 12px 5px;
+    }
+
+    .about-background3 {
+        font-size: 8px;
+    }
+
+    .about-background3-text {
+        margin-right: 2%
+    }
+
+    .about-background4-text {
+        font-size: 8px;
+
+    }
+
     .about-background5-text {
         padding-top: 80px;
         margin-right: 20%;
         margin-left: 20%;
-        font-size: 5px;
-        text-align: right;
+        font-size: 8px;
+        text-align: left;
+    }
+
+    .footer-col {
+        margin-right: 20px;
     }
 }
 
