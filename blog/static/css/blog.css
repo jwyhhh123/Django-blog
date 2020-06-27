@@ -785,11 +785,15 @@ and (max-device-width : 480px) {
         font-size: 8px;
     }
 
+    .about-background2,.about-background3 {
+        flex-direction: column;
+    }
+
     .about-background2-text {
         margin-bottom: 10px;
         margin-top: 50px;
         margin-left: 1px;
-        margin-right: -5px;
+        margin-right: -1px;
     }
 
     .about-ftq{ 
@@ -816,6 +820,10 @@ and (max-device-width : 480px) {
         text-align: left;
     }
 
+    .about-edu,.about-edu-modules {
+        font-style: 8px;
+    }
+
     .cv-profile {
         display: flex;
         margin-top: 5px;
@@ -832,7 +840,8 @@ and (max-device-width : 480px) {
     }
 
     .footer-col {
-        margin-right: 5px;
+        margin-right: 1px;
+        margin-left: 1px;
     }
 }
 
