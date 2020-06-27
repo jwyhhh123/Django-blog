@@ -8,6 +8,10 @@ h1, h2, h3, h4 {
     font-size: 18px;
 }
 
+.blog-title:hover {
+    text-decoration: none;
+}
+
 body {
     font-size: 10px;
     font-stretch: condensed;
@@ -215,6 +219,10 @@ body {
     margin-bottom: 20px;
     margin-left: 20px;
     color: white;
+}
+
+#im-wyj {
+    font-size: 30px;
 }
 
 .about-subtitle {
@@ -772,12 +780,20 @@ and (max-device-width : 480px) {
     }
 
     .content {
-        margin-left: 10px;
+        margin-left: -10px;
+    }
+
+    .nav {
+        margin-left: 5px;
     }
 
     .nav li, .nav a {
         float: left;
         padding: 12px 10px 12px 5px;
+    }
+
+    #im-wyj {
+        font-size: 18px;
     }
 
     .about-background3 {
@@ -790,7 +806,7 @@ and (max-device-width : 480px) {
 
     .about-background4-text {
         font-size: 8px;
-
+        margin-left: -10px;
     }
 
     .about-background5-text {
@@ -801,8 +817,12 @@ and (max-device-width : 480px) {
         text-align: left;
     }
 
+    .post-line {
+        height: 160px;
+    }
+
     .footer-col {
-        margin-right: 20px;
+        margin-right: 25px;
     }
 }
 

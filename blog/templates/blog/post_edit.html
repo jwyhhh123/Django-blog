@@ -1,10 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div style="margin-bottom: 8%;">
     <h2>New post</h2>
     <form method="POST" class="post-form">
     	{% csrf_token %}
         <div class="post-form-color">{{ form.as_p }}</div>
         <div style="float: right;"><button type="submit" class="btn-edu">Save</button></div>
     </form>
+</div>
 {% endblock %}
