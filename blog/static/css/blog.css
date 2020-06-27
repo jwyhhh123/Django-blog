@@ -458,6 +458,10 @@ body {
     opacity: 0.5;
 }
 
+.about-background6 {
+    display: flex;
+}
+
 .about-edu {
     margin-right: 25px;
     padding: 30px 50px 30px 10px;
@@ -785,11 +789,16 @@ and (max-device-width : 480px) {
         flex-direction: column-reverse;
     }
 
-    .about-background1-text, .about-background2, .about-background3, {
+    .me-img {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .about-background1-text, .about-background2, .about-background3 {
         font-size: 8px;
     }
 
-    .about-background2, .about-background3 {
+    .about-background2, .about-background3, .about-background6 {
         flex-direction: column;
     }
 
