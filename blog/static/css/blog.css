@@ -837,7 +837,7 @@ and (max-device-width : 480px) {
 
     .about-games{ 
         margin-right: 7px;
-        margin-left: 5%;
+        margin-left: 1%;
         height: 100px;
         width: 250px;
     }
@@ -849,7 +849,7 @@ and (max-device-width : 480px) {
     }
 
     .about-background4 {
-        width: 110%
+        width: 110%;
         margin-top: -40px;
     }
 
