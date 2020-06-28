@@ -294,6 +294,12 @@ body {
     font-style: italic;
 }
 
+#abt-1{
+    height:400px;
+    width:145%;
+    margin-left:-70px;
+}
+
 .about-background1-text {
     padding-top: 100px;
     margin-bottom: 10px;
@@ -389,6 +395,7 @@ body {
     position:relative;
     margin-top: 1px;
     margin-right: -200px;
+    margin-left: 20%;
     height: 270px;
     width: 580px;
 }
@@ -818,6 +825,10 @@ and (max-device-width : 480px) {
         margin-left: -8px;
     }
 
+    #abt-1{
+        width: 100%;
+    }
+
     .about-background1-text, .about-background2, .about-background3 {
         font-size: 8px;
     }
@@ -840,7 +851,7 @@ and (max-device-width : 480px) {
 
     .about-games{ 
         margin-right: 10px;
-        margin-left: -70px;
+        margin-left: 1%;
         height: 100px;
         width: 280px;
     }
@@ -852,6 +863,7 @@ and (max-device-width : 480px) {
     }
 
     .about-background4 {
+        width: 100%
         margin-left:-58px;
         margin-top: -60px;
     }
@@ -861,6 +873,10 @@ and (max-device-width : 480px) {
         margin-right: 20%;
         margin-left: 15%;
         font-size: 8px;
+    }
+
+    .about-background5 {
+        width: 100%;
     }
 
     .about-background5-text {
