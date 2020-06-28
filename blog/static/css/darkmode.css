@@ -826,8 +826,8 @@ and (max-device-width : 480px) {
     }
 
     #abt-1{
-        width: 110%;
-        margin-left: -140px;
+        width: 100%;
+        margin-left: -200px;
     }
 
     .about-background1-text, .about-background2, .about-background3 {
@@ -852,7 +852,7 @@ and (max-device-width : 480px) {
 
     .about-games{ 
         margin-right: 7px;
-        margin-left: 8%;
+        margin-left: 12%;
         height: 100px;
         width: 280px;
     }
@@ -911,7 +911,6 @@ and (max-device-width : 480px) {
     .footer-col {
         margin-right: 1px;
         margin-left: 1px;
-        font-size: 5px;
     }
 }
 
