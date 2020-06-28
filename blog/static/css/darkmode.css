@@ -827,7 +827,7 @@ and (max-device-width : 480px) {
 
     #abt-1{
         width: 100%;
-        margin-left: -200px;
+        margin-left: -50px;
     }
 
     .about-background1-text, .about-background2, .about-background3 {
@@ -852,7 +852,7 @@ and (max-device-width : 480px) {
 
     .about-games{ 
         margin-right: 7px;
-        margin-left: 12%;
+        margin-left: 8%;
         height: 100px;
         width: 280px;
     }
@@ -866,7 +866,7 @@ and (max-device-width : 480px) {
     .about-background4 {
         width: 100%
         margin-left:-58px;
-        margin-top: -60px;
+        margin-top: -40px;
     }
 
     .about-background4-text {
@@ -877,7 +877,7 @@ and (max-device-width : 480px) {
     }
 
     .about-background5 {
-        width: 100%;
+        width: 110%;
     }
 
     .about-background5-text {
