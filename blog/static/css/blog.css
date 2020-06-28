@@ -837,7 +837,7 @@ and (max-device-width : 480px) {
 
     .about-games{ 
         margin-right: 7px;
-        margin-left: 1%;
+        margin-left: 0%;
         height: 100px;
         width: 250px;
     }
@@ -897,5 +897,3 @@ and (max-device-width : 480px) {
         margin-left: 1px;
     }
 }
-
-
