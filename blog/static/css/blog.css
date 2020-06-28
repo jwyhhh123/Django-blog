@@ -296,6 +296,10 @@ body {
     font-style: italic;
 }
 
+#abt-1{
+
+}
+
 .about-background1-text {
 	padding-top: 100px;
     margin-bottom: 10px;
@@ -801,6 +805,10 @@ and (max-device-width : 480px) {
     .about-title {
         margin-top: 50px;
         margin-left: -8px;
+    }
+
+    #abt-1{
+        width: 120%;
     }
 
     .about-background1-text, .about-background2, .about-background3 {

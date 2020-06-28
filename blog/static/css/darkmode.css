@@ -459,6 +459,10 @@ body {
     opacity: 0.5;
 }
 
+.about-background6 {
+    display: flex;
+}
+
 .about-edu {
     margin-right: 25px;
     padding: 30px 50px 30px 10px;

@@ -28,17 +28,17 @@ class NewVisitorTest(unittest.TestCase):
         footer_text = self.browser.find_element_by_tag_name('footer').text
         self.assertIn('Copyright',footer_text)
 
-        # Check the 'About' page linked homepage
+        # Check the 'Posts' page linked to homepage
         self.browser.find_element_by_link_text('Posts').click()
         sleep(1)
-        about_text = self.browser.find_element_by_class_name('contact-detail').text
-        self.assertIn('Find me on', about_text)
+        post_text = self.browser.find_element_by_class_name('contact-detail').text
+        self.assertIn('Find me on', post_text)
 
-        # Check the 'Resume' page linked homepage
+        # Check the 'Resume' page linked to homepage
         self.browser.find_element_by_id('resume').click()
         sleep(1)
-        cv_text = self.browser.find_element_by_tag_name('p').text
-        self.assertIn('I am keen to view somewhere far enough and wide enough.', cv_text)
+        cv_text = self.browser.find_element_by_tag_name('h3').text
+        self.assertIn('Profile', cv_text)
 
         # Clicking the header icon can go back to its homepage.
         self.browser.find_element_by_class_name('menu-logo').click()
